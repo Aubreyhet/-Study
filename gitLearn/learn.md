@@ -123,8 +123,72 @@
          ...
          ```
        - #### 从现有仓库克隆
-         克隆
+         克隆仓库的命令格式为`git clone [url]`，比如要克隆Ruby 语言的 Git 代码仓库 Grit，可以用下面的命令：<br>
+         `$ git clone git://github.com/schacon/grit.git`<br>
+         这样会在当前目录下创建一个grit的项目文件。其中包括.git 文件夹，用于保存下载下来的所有版本记录，然后从中取出最新的版本文件拷贝。你还可以创建自定义的文件名如：<br>
+         `$ git cione git://github.com/aubreyhet/first.js myfile`<br>
+         如此创建了一个名为myfile的文件夹除了名不一样之外其他的都一样
+
      - ### 记录每次更新到仓库
+       - #### 检查当前文件状态
+         命令`git status` 确定哪些文件处于什么状态，如：<br>
+         ```
+         $ git status
+         On branch master
+         nothing to commit, working directory clean
+         ```
+         如上，说明工作区，暂存区没有文件更改，没有未跟踪的文件
+       - #### 跟踪新文件
+         命令`git add .`，开始跟踪一个新文件 . 表示所有文件 如果时指定文件直接跟指定文件名即可，如：<br>
+         `$ git add index.js`<br>
+         此时再执行`git status`，如下：<br>
+         ```
+         $ git status
+         On branch master
+         Changes to be committed:
+            (use "git reset HEAD <file>..." to unstage)
+
+                 new file:   index.js
+         ```
+         只要是在“Changes to be committed”下边，就说明文件文件处于暂存状态，此时文件的状态处于暂存状态
+       - #### 暂存已修改文件
+         此时我们对已跟踪的index.js文件进行修改再执行`git status`查看文件状态如下：<br>
+         ```
+         $ git status index.js
+         On branch master
+         Changes to be committed:
+             (use "git reset HEAD <file>..." to unstage)
+
+                 new file:   index.js
+         ```
+         此时文件在Changes to be committed: 下边,说明该文件发生了改变没有放到暂存区，要放到暂存区需要执行命令`git add index.js`，再次执行`git status` 查看文件状态，可以看到文件处于“Changes to be committed”下边，说明此时文件已经处于暂存状态 <br>
+       - #### 忽略某些文件
+         有时我们不需要某些文件被git托管，比如git配置文件，日志文件等，则需要忽略文件。我们可以创建一个名为`.gitignore`的文件，列出我们需要忽略的文件，如下在这个文件中：<br>
+         ```
+         # 忽略所有 .a 结尾的文件
+         *.a
+         # 但 lib.a 除外
+         !lib.a
+         # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+         /TODO
+         # 忽略 build/ 目录下的所有文件
+         build/
+         # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+         doc/*.txt
+         # 忽略 doc/ 目录下所有扩展名为 txt 的文件
+         doc/**/*.txt
+         ```
+         如上我们忽略了除lib.a以外的所有以.a结尾文件 忽略根文件夹下边的TODO文件 忽略build文件夹下边的所有文件 忽略doc文件下的直属的.txt文件
+
+       - #### 查看已暂存和未暂存的更新
+         如果我们想看具体的文件状态显然`git status`是满足不了的，此时我们需要`git diff`命令；来查看详细状态，此命令比较的是工作区域与暂存区域的快照，可以看见详细的修改信息
+       - #### 提交更新
+         我们通过上边的命令`git add .`只是将文件提交到暂存区，我们需要将更改的文件提交到本地仓则需要执行`git commit`命令，这种方式会启用文本编辑 以用来编辑此次提交文件的说明
+
+         我们也可以使用在commit后边加参数的形式添加更改说明，如：`git commit -m '提交说明'` 
+       - #### 跳过使用暂存区域
+       - #### 移除文件
+       - #### 移动文件
      - ### 查看提交历史
      - ### 撤销操作
      - ### 远程仓库的使用

@@ -37,4 +37,15 @@ git学习
         ```
         git config --global user.email test@test.com
         ```
+- 全局设置签名
 
+        - 示例代码
+
+        // git config --global user.name 要设置的用户名
+        ```
+         git config --global user.name aubrey
+        ```
+        //git config --global user.email 要设置的邮箱地址
+        ```
+        git config --global user.email test@test.com
+        ```

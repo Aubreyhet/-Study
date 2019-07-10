@@ -276,19 +276,235 @@
         <h2>5. npm info</h2>
         <div class="carration">
             <p>
-                <code>npm info</code>命令可以查看每个模块的具体信息。比如，查看underscore模块的信息。
+                <code>npm info</code>命令可以查看每个模块的具体信息。比如，查看description模块的信息，如图0101。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <img src="./img/0101.png" alt="0101">
+            </div>
+        </div>
+        <h2>6. npm search</h2>
+        <div class="carration">
+            <p><code>npm search</code>命令用于搜索npm仓库，它后边可以跟字符串，也可以跟正则表达式。</p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm search &lt;搜索词&gt;
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                下面是个例子
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>$ npm search node-gyp</p>
+                <p>// NAME             DESCRIPTION</p>
+                <p>// autogypi         Autogypi handles dependencies for node-gyp projects</p>
+                <p>// grunt-node-gyp   Run node-gyp commands from Grunt.</p>
+                <p>// gyp-io           Temporary aolution to let node-gyp run `rebuild` under...</p>
+                <p>// ...</p>
+                
+            </div>
+        </div>
+        <h2>7. npm list</h2>
+        <div class="carration">
+            <p><code>npm list</code>命令以树形结构列出当前项目安装的所有模块，以及他们依赖的模块。</p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm list
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                加上global参数，会列出全局安装的模块。
             </p>
         </div>
         <div class="code-abroad">
             <div class="code">
                 <p>
-                    $ npm info underscore
+                    $ npm list -global
                 </p>
             </div>
         </div>
-        <h2>6. npm search</h2>
-        <h2>7. npm list</h2>
+        <div class="carration">
+            <p>
+                <code>npm list</code>命令也可以列出单个模块。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm list underscore
+                </p>
+            </div>
+        </div>
         <h2>8. npm install</h2>
+        <h3>8.1 基本用法</h3>
+        <div class="carration">
+            <p>
+                Node模块采用<code>npm install</code>命令安装。
+            </p>
+        </div>
+        <div class="carration">
+            <p>
+                每个模块可以“全局安装”，也可以“本地安装”。“全局安装”指的是将一个模块安装到系统目录中，各个项目都可以调用。一般来说，全局安装只适用于工具模块，比如<code>eslint</code>和<code>gulp</code>。”本地安装“指的是将一个模块下载
+                到当前项目的<code>node_modules</code>子目录，然后只有在项目之中，才能调用这个模块。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <span># 本地安装</span>
+                <p>$ npm install &lt;package name&gt;</p>
+                <br>
+                <br>
+                <span># 全局安装</span>
+                <p>$ sudo npm install -global &lt;package name&gt;</p>
+                <p>$ sudo npm install -g &lt;package name&gt;</p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                <code>npm install</code>也支持直接输入GitHub代码库地址。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm install git://github.com/package/path.git
+                </p>
+                <p>
+                    $ npm install git://github.com/package/path.git#0.1.0
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                安装之前，<code>npm install</code>会先检查，<code>node_modules</code>目录之中是否有指定模块。如果存在，就不再重新安装了，即使远程仓库已经有了一个新版本，也是如此。
+            </p>
+            <br>
+            <p>
+                如果你希望，一个模块是否安装过，npm都要强制重新安装，也可以使用<code>-f</code>或者<code>--force</code>参数。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm install &lt;packageName&gt; --force
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                如果你希望，所有的模块都要强制重新安装，那就删除<code>node_modules</code>目录，重新执行<code>npm install</code>。
+            </p>
+        </div>
+        <div class="code-carration">
+            <div class="code">
+                <p>
+                    $ rm -rf node_modules
+                </p>
+                <p>
+                    $ npm install
+                </p>
+            </div>
+        </div>
+        <h3>8.2 安装不同的版本</h3>
+        <div class="carration">
+            <p>
+                install命令总是安装模块的最新版本，如果要安装模块的特定版本，可以在模块后边加上@和版本号。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm install sax@latest
+                </p>
+                <p>
+                    $ npm install sax@0.1.1
+                </p>
+                <p>
+                    $ npm install sax@"&gt;=0.1.0 &lt;0.2.0"
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                如果使用<code>--save-exact</code>参数， 会在package.json文件指定安装模块的确切版本。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm install readable-stream --save --save-exact
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                install命令可以使用不同的参数，指定所安装的模块属于哪一种性质的依赖关系，即出现在package.json文件的哪一项中。
+            </p>
+        </div>
+        <div class="carration">
+            <ul>
+                <li>
+                    &gt; -save: 模块名将被添加到dependencies，可以简化为参数 <code>-s</code>
+                </li>
+                <li>
+                    &gt; -save-dev：模块名将被添加到devDependencies，简写为参数<code>-D</code>
+                </li>
+            </ul>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm install sax --save
+                </p>
+                <p>
+                    $ npm install node-tap --save-dev
+                </p>
+                <br>
+                <span>
+                    # 或者
+                </span>
+                <p>
+                    $ npm install sax -S
+                </p>
+                <p>
+                    $ npm install node-tap D
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                如果要安装beta版本的模块，需要使用下面的命令。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <span>
+                    # 安装最新版本的beta版
+                </span>
+                <p>
+                    $ npm install &lt;module-name&gt;@beta (latest beta)
+                </p>
+                <br>
+                <br>
+                <span>
+                    # 安装指定的beta版本
+                </span>
+                <p>
+                    
+                </p>
+            </div>
+        </div>
         <h2>9. 避免系统权限</h2>
         <h2>10. npm update, npm uninstall</h2>
         <h2>11. npm run</h2>

@@ -192,7 +192,7 @@
                 <p>$ npm help</p>
                 <br>
                 <span># 查看各个命令简单用法</span>
-                <p>$ npm -1</p>
+                <p>$ npm -1</p>                                                 
                 <span># 查看npm的版本</span>
                 <p>$ npm -v</p>
                 <span># 查看npm的配置</span>
@@ -501,13 +501,246 @@
                     # 安装指定的beta版本
                 </span>
                 <p>
-                    
+                    $ npm install &lt;module-name&gt;@1.3.1-beta.3
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                <code>npm install</code>默认会安装<code>dependencies</code>字段和<code>devDependencies</code>字段中的所有模块，如果
+                使用<code>--production</code>参数，可以只安装字段<code>dependencies</code>中的模块。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm install --production
+                </p>
+                <br>
+                <span>
+                    # 或者
+                </span>
+                <p>
+                    $ NODE_ENV=production npm install
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                一旦安装了某个模块就可以在代码中用<code>require</code>命令加载这个模块。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    var backbone = require('backbone')
+                </p>
+                <p>
+                    console.log(backbone.VERSION)
                 </p>
             </div>
         </div>
         <h2>9. 避免系统权限</h2>
+        <div class="carration">
+            <p>
+                默认情况下，Npm全局模块都安装在系统目录，（比如<code>/usr/local/lib/</code>），普通用户没有写入权限，需要用到<code>sudo</code>
+                命令。这很不方便，我们可以在没有root权限的情况下安装全局模块。
+            </p>
+            <br>
+            <p>
+                首先在主目录下创建配置文件<code>.npmrc</code>，然后在该文件中将<code>perfix</code>变量定义到主目录下边。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    prefix = home/yourUsernamr/npm
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                然后在主目录下创建<code>npm</code>子目录。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ mkdir ~/npm
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                此后，全局安装的模块都会安装在这个子目录下，npm也会到<code>~/npm/bin</code>目录中去寻找命令。
+            </p>
+            <p>
+                最后，将这个路径在<code>.bash_profile</code>文件（或<code>.bashrc</code>文件）中加入PATH变量。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    export PATH=~/npm/bin:$PATH
+                </p>
+            </div>
+        </div>
         <h2>10. npm update, npm uninstall</h2>
+        <div class="carration">
+            <p>
+                <code>npm update</code>可以更新本地安装的模块。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <span># 更新当前目录的指定模块</span>
+                <p>$ npm update [package name]</p>
+                <br>
+                <br>
+                <span>
+                    # 升级全局安装的模块
+                </span>
+                <p>
+                    $ npm update -golbal [package name]
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                他会到远程仓库查看最新版本，然后查询本地版本。如果本地版本不存在，或者远程版本较新就会下载安装
+            </p>
+            <br>
+            <p>
+                使用<code>-s</code>或者<code>--save</code>参数，可以在安装的时候更新<code>package.json</code>里边模块的版本号。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <span>// 更新之前的package.json</span>
+                <p>
+                    dependencies: {<br>
+                        dep1: "^1.1.1"<br>
+                    }<br>
+                </p>
+                <br>
+                <br>
+                <span>// 更新之后的package.json</span>
+                <p>
+                    dependencies: {<br>
+                        dep: "^1.2.2"<br>
+                    }<br>
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                注意，从npm v2.6.1开始，<code>npm update</code>只更新顶层模块，而不更新依赖的的依赖，以前版本是递归更新的。如果想取得
+                老版本的效果，需要下边的命令。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>$ npm --depth 999 update</p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                <code>npm uninstall</code>命令卸载已经安装了的模块
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    $ npm uninstall [package name]
+                </p>
+                <br>
+                <br>
+                <span>
+                    # 卸载全局安装的模块
+                </span>
+                <p>
+                    $ npm uninstall [package name] -global
+                </p>
+            </div>
+        </div>
         <h2>11. npm run</h2>
+        <div class="carration">
+            <p>
+                <code>npm</code>不仅用于模块管理，也可以执行脚本。<code>package.json</code>中有<code>script</code>字段，可以用于指定
+                脚本命令，供<code>npm</code>直接调用。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    {<br>
+                        "name": "myproject",<br>
+                        "devDependencies": {<br>
+                          "jshint": "latest",<br>
+                          "browserify": "latest",<br>
+                          "mocha": "latest"<br>
+                        },<br>
+                        "scripts": {<br>
+                          "lint": "jshint **.js",<br>
+                          "test": "mocha test/"<br>
+                        }<br>
+                      }<br>                    
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>
+                上边代码中，<code>scritpt</code>字段指定了两项命令<code>lint</code>和<code>test</code>,命令输入<code>npm run-sctipt lint</code>
+                或<code>npm run lint</code>，就会执行<code>jshint **.js</code>，输入<code>npm run-sctipt test</code>或者<code>npm run test</code>,就会执行
+                <code>mocha test/</code>。<code>npm run</code>是<code>npm run-script</code>的缩写。一般使用前者，但是后者更反映出这个命令的本质
+            </p>
+            <br>
+            <p>
+                <code>npm run </code>命令会自动在<code>$PATH</code>环境变量中添加<code>node_modules/.bin</code>目录，所以<code>script</code>字段调用命令时不用
+                加上路径，这就避免了全局安装NPM模块。
+            </p>
+            <br>
+            <p>
+                <code>npm run</code>如果不加任何参数，直接运行，会列出<code>package.json</code>中所有的可执行脚本命令
+            </p>
+            <br>
+            <p>
+                npm内置了两个命令简写，<code>npm test</code>相当于<code>npm run test</code>，还有一个是<code>npm start</code>相当于<code>npm run start</code>
+            </p>
+            <br>
+            <p><code>npm run</code> 会创建一个Shell</p>执行指定的命令，并临时将<code>node_modules/.bin</code>添加到PATH变量，这意味着本地模块可以直接运行。
+            <br>
+            <p>
+                举例来说执行安装ESlint模块的命令
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>$ npm i eslint --save-dev</p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>运行上边的代码会产生两个结果。首先Eslint会安装到当前项目的<code>node_modules</code>子目录，其次<code>node_modules/.bin</code>
+            目录会生成一个符号链接<code>node_modules/.bin/eslint</code>，指向ESlint的可执行脚本 </p><br>
+            <p>
+                然后你就可以在<code>package.json</code>的<code>script</code>属性里不带路径的使用ESlint这个脚本。
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    {<br>
+                        "name": "Test Project",<br>
+                        "devDependencies": {<br>
+                          "eslint": "^1.10.3"<br>
+                        },<br>
+                        "scripts": {<br>
+                          "lint": "eslint ."<br>
+                        }<br>
+                      }<br>   
+                </p>
+            </div>
+        </div>
         <h2>12. npm link</h2>
         <h2>13. npm bin</h2>
         <h2>14. npm adduser</h2>
@@ -517,6 +750,5 @@
         <h2>18. 其他命令</h2>
         <h2>19.参考链接</h2>
     </div>
-    
 </body>
 </html>

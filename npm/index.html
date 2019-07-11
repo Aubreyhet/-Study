@@ -18,45 +18,45 @@
                         <div>1. 简介</div>
                     </li>
                 </a>
-                <a href="#">
+                <a href="#init">
                     <li>
                         <div>2. npm init</div>
                     </li>
                 </a>
-                <a href="#">
+                <a href="#set">
                     <li>
                         <div>3. npm set</div>
                     </li>
                 </a>
-                <a href="#">
+                <a href="#config">
                     <li>
                         <div>4. npm config</div>
                     </li>
                 </a>
-                <a href="#">
+                <a href="#info">
                     <li>
                         <div>5. npm info</div>
                     </li>
                 </a>
-                <a href="#">
+                <a href="#search">
                     <li>
                         <div>6. npm search</div>
                     </li>
                 </a>
-                <a href="#">
+                <a href="#list">
                     <li>
                        <div> 7. npm list</div>
                     </li>
                 </a>
-                <a href="#">
+                <a href="#install">
                     <li><div> 8. npm install</div>
                         <ul>
-                            <a href="">
+                            <a href="#install-one">
                                 <li>
                                    <div> 8.1 基本用法</div>
                                 </li>
                             </a>
-                            <a href="">
+                            <a href="#install-two">
                                 <li>
                                     <div> 8.2 安装不同版本</div>
                                 </li>
@@ -64,17 +64,17 @@
                         </ul>
                     </li>
                 </a>
-                <a href="">
+                <a href="#root">
                     <li>
                         <div> 9. 避免系统权限</div>
                     </li>
                 </a>
-                <a href="">
+                <a href="#update">
                     <li>
                         <div> 10. npm update, npm uninstall</div>
                     </li>
                 </a>
-                <a href="">
+                <a href="#run">
                     <li>
                         <div>11. npm run</div>
                         <ul>
@@ -199,7 +199,7 @@
                 <p>$ npm config list -1</p>
             </div>
         </div>
-        <h2>2. npm init</h2>
+        <h2 id="init">2. npm init</h2>
         <div class="narration">
             <p><code>npm init</code>用来初始化生成一个新的<code>package.json</code>文件。他会向用户提问一系列问题，如果你觉得不用修改默认配置，一路回车就可以了。</p>
             <p>如果使用了<code>-f</code>、<code>-y</code>则跳过提问阶段，直接生成一个新的<code>package.json</code>文件。 </p>
@@ -209,7 +209,7 @@
                 <p>$ npm init</p>
             </div>
         </div>
-        <h2>3. npm set</h2>
+        <h2 id="test">3. npm set</h2>
         <div class="narration">
             <p><code>npm set</code>用来设置环境变量。</p>
         </div>
@@ -234,7 +234,7 @@
         <div class="narration">
             <p>上面命令设置加入模块时，<code>pack.json</code>将记录模块的确切版本而不是一个可选的版本范围</p>
         </div>
-        <h2>4. npm config</h2>
+        <h2 id="config">4. npm config</h2>
         <div class="code-abroad">
             <div class="code">
                 <p>$ npm config set prefix $dir</p>
@@ -273,7 +273,7 @@
                 上面命令指定使用<code>npm init</code>时，生成的<code>package.json</code>文件的字段默认值
             </p>
         </div>
-        <h2>5. npm info</h2>
+        <h2 di="info">5. npm info</h2>
         <div class="carration">
             <p>
                 <code>npm info</code>命令可以查看每个模块的具体信息。比如，查看description模块的信息，如图0101。
@@ -284,7 +284,7 @@
                 <img src="./img/0101.png" alt="0101">
             </div>
         </div>
-        <h2>6. npm search</h2>
+        <h2 id="search">6. npm search</h2>
         <div class="carration">
             <p><code>npm search</code>命令用于搜索npm仓库，它后边可以跟字符串，也可以跟正则表达式。</p>
         </div>
@@ -311,7 +311,7 @@
                 
             </div>
         </div>
-        <h2>7. npm list</h2>
+        <h2 id="list">7. npm list</h2>
         <div class="carration">
             <p><code>npm list</code>命令以树形结构列出当前项目安装的所有模块，以及他们依赖的模块。</p>
         </div>
@@ -346,8 +346,8 @@
                 </p>
             </div>
         </div>
-        <h2>8. npm install</h2>
-        <h3>8.1 基本用法</h3>
+        <h2 id="install">8. npm install</h2>
+        <h3 id="install-one">8.1 基本用法</h3>
         <div class="carration">
             <p>
                 Node模块采用<code>npm install</code>命令安装。
@@ -416,7 +416,7 @@
                 </p>
             </div>
         </div>
-        <h3>8.2 安装不同的版本</h3>
+        <h3 id="install-two">8.2 安装不同的版本</h3>
         <div class="carration">
             <p>
                 install命令总是安装模块的最新版本，如果要安装模块的特定版本，可以在模块后边加上@和版本号。
@@ -540,7 +540,7 @@
                 </p>
             </div>
         </div>
-        <h2>9. 避免系统权限</h2>
+        <h2 id="root">9. 避免系统权限</h2>
         <div class="carration">
             <p>
                 默认情况下，Npm全局模块都安装在系统目录，（比如<code>/usr/local/lib/</code>），普通用户没有写入权限，需要用到<code>sudo</code>
@@ -585,7 +585,7 @@
                 </p>
             </div>
         </div>
-        <h2>10. npm update, npm uninstall</h2>
+        <h2 id="update">10. npm update, npm uninstall</h2>
         <div class="carration">
             <p>
                 <code>npm update</code>可以更新本地安装的模块。
@@ -663,7 +663,7 @@
                 </p>
             </div>
         </div>
-        <h2>11. npm run</h2>
+        <h2 id="run">11. npm run</h2>
         <div class="carration">
             <p>
                 <code>npm</code>不仅用于模块管理，也可以执行脚本。<code>package.json</code>中有<code>script</code>字段，可以用于指定
@@ -741,6 +741,84 @@
                 </p>
             </div>
         </div>
+        <div class="carration">
+            <p>
+                等到运行<code>npm run eslint</code>的时候，他会自动执行<code>node_modules/.bin/eslint .</code>。
+            </p>
+            <p>如果直接运行<code>npm run</code>不加参数，他会列出<code>scritp</code>属性下所有命令</p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <code>
+                    <pre>
+                        $ npm run
+                        Available scripts in the user-service package:
+                        lint
+                            jshint **.js
+                        test
+                            mocha test/
+                    </pre>
+                </code>
+            </div>
+        </div>
+        <div class="carration">
+            <p>下边是另外一个<code>package.json</code>文件的例子</p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <code>
+                    <pre>
+                        "scripts": {
+                            "watch": "watchify client/main.js -o public/app.js -v",
+                            "build": "browserify client/main.js -o public/app.js",
+                            "start": "npm run watch & nodemon server.js",
+                            "test": "node test/all.js"
+                          },                          
+                    </pre>
+                </code>
+            </div>
+        </div>
+        <div class="carration">
+            <p>上边代码在<code>scripts</code>项，定义了四个别名，每个别名都有对应的脚本命令。</p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>$ npm run watch</p>
+                <p>$ npm run build</p>
+                <p>$ npm run start</p>
+                <p>$ npm run test</p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>其中start 和test 都可以使用简写，可以省略run</p>
+            <br>
+            <p>如果希望一个命令的输出是另外一个命令的输入  可以用Linux系统的管道命令，将两个操作连接在一起，
+                也可以使用简单的方法<code>npm run</code>命令
+            </p>
+        </div>
+        <h4>11.1 参数</h4>
+        <div class="carration">
+            <p>
+                <code>npm run</code>命令还可以添加参数
+            </p>
+        </div>
+        <div class="code-abroad">
+            <div class="code">
+                <p>
+                    <code>
+                        <pre>
+                            "scripts": {
+                                "test": "mocha test/"
+                              }                              
+                        </pre>
+                    </code>
+                </p>
+            </div>
+        </div>
+        <div class="carration">
+            <p>上面的代码指定<code>npm test</code>，实际运行<code>mocha test/</code> </p>
+        </div>
+        <h1>11.2 script脚本命令最佳实践</h1>
         <h2>12. npm link</h2>
         <h2>13. npm bin</h2>
         <h2>14. npm adduser</h2>

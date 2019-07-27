@@ -57,3 +57,21 @@
 // const foo;
 
 
+// let [x = 'a'] = [null];
+// console.log(x);
+
+
+// let [a, b, c, d, e] = 'hello';
+// console.log(a, b, c, d, e)
+
+
+// function add([x, y]){
+//   return x + y;
+// }
+// console.log(add([2, 3]));
+
+
+function move({x = 0, y = 0} = {}) {
+  return [x, y];
+}
+console.log(move({x: 3, y: 8}))

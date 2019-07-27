@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>es6</title>
+</head>
+<body>
+
+<script>
+//1.let和 const
+//  1.1基本用法 
+{
+    let a = 10;
+    var b = 20;
+}
+a // ReferenceError: a is not defined.
+b // 20
+
+
+for (let i = 0; i < 10; i++) {
+    //...
+}
+console.log(i);
+//ReferenceError: i is not defined
+
+
+var a = [];
+for (var i = 0; i < 10; i++){
+    a[i] = function (){
+        console.log(i);
+    };
+}
+a[6](); //10
+//上面的代码中，变量i时var声明的，在全局范围内都有效，所以全局只有一个变量i。每次循环，变量的值都
+//会发生变化，而循环内被赋值给数组a的函数内部的consol.log(i)中的i指向的全局的i。也就是说，所有所
+//有数组a的成员中的i指向都是同一个i，导致运行时输出的是最后一轮的i值，也就是10.
+
+
+var a = [];
+for (let i = 0; i < 10; i++){
+    a[i] = function (){
+        console.log(i);
+    };
+}
+a[6](); //6
+
+
+for (let i = 0; i < 3; i++){
+    let i = 'abc';
+    console.log(i);
+}
+//abc
+//abc
+//abc
+
+
+// 1.2 不存在变量提升
+// var 的情况
+console.log(foo);    //输出undefined
+var foo = 2;
+
+//let 的情况
+console.log(bar);    //报错ReferenceError
+let bar = 2;
+
+
+// 1.3暂时性死区
+var tmp = 123;
+if (true) {
+    tmp = 'abc';      //ReferenceError
+    let tmp;
+}
+
+
+if (true) {
+                         //TDZ开始
+    tmp = 'abc'          //ReferenceError
+    console.log(tmp);    //ReferenceError
+
+    let tmp;             //TDZ 结束
+    consol.log(tmp);     //undefined
+
+    tmp = 123;
+    console.log(tmp);    //123
+}
+
+
+typeof x;               //ReferenceErrror
+let x;
+
+
+typeof undeclared       //"undefined"
+
+
+function bar1(x = y, y = 2) {
+    return [x, y]
+}
+bar1();                  //报错
+
+
+function bar2(x = 2, y = x) {
+    return [x, y]
+}
+bar2();                 //[2,2]
+
+
+var x = x;              //不报错
+let x = x;              //报错
+
+
+// 1.4不允许重复声明
+function myfun(){
+    let a = 10;
+    var a = 1;
+}                       //报错
+
+
+function myfun1(){
+    let a = 10;
+    let a = 1;
+}                       //报错
+
+
+//2.块级作用域
+// 2.1 
+var tmp = new Date();
+function f(){
+    console.log(tmp);
+    if (false){
+        var tmp = 'hello world!';
+    }
+}
+f();        //undefined
+
+
+var s = 'hello';
+for (var i = 0; i < s.length; i++) {
+    console.log(s[i]);
+}
+console.log(i);             //5 变量泄露
+
+
+// 2.2
+function f1() {
+    let n = 5;
+    if(true) {
+        let n = 10;
+    }
+    console.log(n);      //  5
+}
+f1();
+
+
+{{{{{
+    {let insane = 'hello wprld'}
+    console.log(insane);        //报错
+}}}}}
+
+
+//立即执行函数
+(function () {
+    var tmp = 'hello';
+    //...
+}());
+//块级作用域写法
+{
+    let tmp ='hello';
+    //...
+}
+
+
+// 2.3
+//两种在es5中非法的定义function
+if (true) {
+    function f(){
+    }
+}
+
+try {
+    function f(){}
+} catch(e) {
+    //...
+}
+
+
+//3.const命令
+// 3.1
+const PI = 3.1415;
+PI;                         // 3.1415
+PI = 3;                     // TypeError:Assignment to constant variable.
+
+
+const foo;                  //SyntaxError: Missing initializer in const declaration
+
+
+if (true) {
+    const MAX = 5;
+}
+MAX                         //Uncaught ReferenceError:MAX is not defined
+
+
+if (true){
+    console.log(MAX);       //ReferenceError
+    const MAX = 5;
+}
+
+
+var  message = 'hello world';
+let age = 25;
+const message = 'goodbey!';         //这两行报错
+const age = 30;
+
+
+// 3.2
+const foo = {};
+foo.prop = 123;                 //为foo添加属性可以添加成功
+foo = {};                       //将foo指向另外一个对象，就会报错
+
+
+const arr = [];
+arr.push('Hello');              //可执行
+arr.length = 0;                 //可执行
+arr = ['Dave'];                 //报错
+
+
+//冻结对象freeze方法
+const foo = Object.freeze({});
+foo.prop = 123;                 //报错
+
+
+//彻底冻结对象
+var constantize = (obj) => {
+    Object.freeze(obj);
+    Object.keys(obj).forEach( (key, i) => {
+        if (typeof obj[key] === 'object'){
+            constantize(obj[key]);
+        }
+    });
+};
+
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body onload="alert('我是使用在body上添加onlode事件弹出的')">
+<div id='myDivOne'>
+    <ul>
+        <li>UI事件</li>
+        <li>焦点事件</li>
+        <li>鼠标事件</li>
+        <li>滚轮事件</li>
+        <li>文本事件</li>
+        <li>键盘事件</li>
+        <li>合成事件</li>
+        <li>变动事件</li>
+        <li>变动名称事件</li>
+    </ul>
+    <div>
+        <h4>UI事件</h4>
+        <ul>
+            <li>
+                <h5>DOMActivate</h5>
+                <p>已经废弃，不建议使用</p>
+            </li>
+            <li>
+                <h5>load</h5>
+                <p>当页面完全加载后在window上触发</p>
+            </li>
+            <li>
+                <h5>unload</h5>
+                <p>当页面完全卸载后在window上触发</p>
+            </li>
+            <li>
+                <h5>abort</h5>
+                <p>在用户停止下载过程时，如果嵌入的内容没有加载完，就在object 上触发</p>
+            </li>
+            <li>
+                <h5>error</h5>
+                <p>当javascript发生错误时在window上触发</p>
+            </li>
+            <li>
+                <h5>elect</h5>
+                <p>当用户选择文本框中一个或者多个字符时在该元素上触发</p>
+            </li>
+            <li>
+                <h5>resize</h5>
+                <p>当窗口或者框架的大小发生变化时，在window或者框架上触发</p>
+            </li>
+            <li>
+                <h5>scoll</h5>
+                <p>当用户滚动带滚动条的内容时在该元素上触发</p>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <h4>load事件</h4>
+                <p>两种定义方式</p>
+                <p>1.使用指定事件处理程序的方式添加lode事件</p>
+                <p>2.使用在body上添加onlode事件</p>
+            </li>
+            <li>unlode事件</li>
+            <p>unlode事件与lode事件相似 定义也是有两种相同的方式。</p>
+            <p>lode和unlode事件也可以绑定在img和input上，当元素加载完成或者卸载完成时触发事件</p>
+            <li>
+                <h4>resize 事件</h4>
+                <p>这个事件也是可以通过指定事件处理程序的方式添加</p>
+            </li>
+            <li>
+                <h4>scoll事件</h4>
+                <p></p>
+            </li>
+        </ul>
+    </div>  
+    <div>
+        <h4>焦点事件</h4>
+        <lu>
+            <li>
+                <h4>blur事件</h4>
+                <p>当元素失去焦点之后触发，这个事件不会冒泡</p>
+            </li>
+            <li>
+                <h4>DOMFocusIn</h4>
+                <p>dom3废弃了这个事件可以使用focusin事件</p>
+            </li>
+            <li>
+                <h4>DOMFocusOut</h4>
+                <p>同上，我们可以使用focusout</p>
+            </li>
+            <li>
+                <h4>focus</h4>
+                <p>在元素获得焦点时触发该事件，该事件不冒泡</p>
+            </li>
+            <li>
+                <h4>focusin</h4>
+                <p>focusin 事件 在元素在获得焦点时触发 但是他会冒泡</p>
+            </li>
+            <li>
+                <h4>focusout</h4>
+                <p>focusout 事件在元素失去焦点时触发，相当于blur事件</p>
+            </li>
+        </lu>
+    </div>
+    <div>
+        <h4>鼠标和滚轮事件</h4>
+        <ul>
+            <li>
+                <h4>click</h4>
+                <p>当用户单机鼠标或者按下回车时触发</p>
+            </li>
+            <li>
+                <h4>dblcilck</h4>
+                <p>当用户双击鼠标时触发该事件</p>
+            </li>
+            <li>
+                <h4>mousedown</h4>
+                <p>当用户按下鼠标任意按键时触发该事件</p>
+            </li>
+            <li>
+                <h4>mouseenter</h4>
+                <p>当用户首次从元素外移动到元素范围内的时候触发该事件，不会冒泡</p>
+            </li>
+            <li>
+                <h4>mouseleave</h4>
+                <p>光标移动离开元素时触发该事件，不会冒泡</p>
+            </li>
+            <li>
+                <h4>mousemove</h4>
+                <p>当光标在元素内移动时重复触发</p>
+            </li>
+            <li>
+                <h4>mouseout</h4>
+                <p>拖出元素时触发</p>
+            </li>
+            <li>
+                <h4>mouseover</h4>
+                <p>拖入元素时触发的事件</p>
+            </li>
+            <li>
+                <h4>mouseup</h4>
+                <p>在用户释放鼠标时触发事件</p>
+            </li>
+        </ul>
+    </div>
+</div> 
+<script src="index.js"></script>
+</body>
+</html>

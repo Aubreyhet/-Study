@@ -257,3 +257,31 @@
 
 // var x = 45;
 // console.log(x>=60);
+
+
+//三目运算符计算是否为闰年  以及2月天数
+// var y = 2100;
+// var isLeap = y % 4 === 0 && y % 100 !== 0 || y % 400 === 0;
+// var days = isLeap ? 29 : 28;
+// console.log(`二月的天数为${days}天`);
+
+
+// var x = 1;
+// x = x++ >= 1 ? x++ * x++ : ++x * ++x;
+// console.log(x);
+//     6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

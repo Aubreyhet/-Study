@@ -554,17 +554,264 @@
 // }
 
 
-//
+//在控制台上输出100个*
+// for(var i = 1; i <= 100; i++){
+//   console.log('*');
+// }
+
+//让用户输入数字x然后输出x个*
+// var x = +prompt('请输入一个数字：');
+// if(isNaN(x)){
+//   console.log('请输入正确的数字')
+// }else{
+//   for(var i = 1; i <= x; i++){
+//     console.log('*')
+//   }
+// }
+
+//输出一个三行五列的*
+// var row = 3;
+//     col = 5;
+// for(var i = 1; i <= row; i++){
+//   var y = '';
+//   for(var j = 1; j <= col; j++){
+//     y += '*';
+//   }
+//   console.log(y)
+// }
+
+//输出一个直角三角形
+// var x = 5;
+// for(var i = 1; i <= x; i++){
+//   var y = '';
+//   for(var j = 1; j <= i; j++){
+//     y += '*';
+//   }
+//   console.log(y)
+// }
+
+//用*输出一个等腰三角形
+// var row = 10;
+// for(var i = 1; i < 5; i++){
+//   var y = '';
+//   for(var j = 0; j < row-i; j++){
+//     y += ' ';
+//   }
+//   for(var z = 0; z < i*2-1; z++){
+//     y += '*'
+//   }
+//   console.log(y);
+// }
+
+//输出1-100 的数字
+// var x = 100;
+// for(var i = 1; i <= x; i++){
+//   console.log(i);
+// }
+
+//输出1-100所有奇数
+// var x = 100;
+// for(var i = 0; i <= x; i++){
+//   if(i % 2 != 0){
+//     console.log(i);
+//   }
+// }
+
+//输出1-100内奇数之和
+// var sum = 0;
+//     x = 100;
+// for(var i = 0; i <= x; i++){
+//   if(i % 2 != 0){
+//     sum += i;
+//   }
+// }
+// console.log(sum);
+
+//输出1到100之和
+// var num = 100;
+//     sum = 0;
+// for(var i = 0; i <= num; i++){
+//   sum += i;
+// }
+// console.log(sum);
+
+//1-10 数字积
+// var num = 10;
+//     sum = 1;
+// for(var i = 1; i <= num; i++){
+//   sum *= i;
+// }
+// console.log(sum);
+
+//判断一个数知否为素数
+// var num = 132;
+//     isFind = 0;
+// for(var i = 2; i < num-1; i++){
+//   if(num % i == 0){
+//     isFind++;
+//   }
+// }
+// if(isFind > 0){
+//   console.log('bushi')
+// }else{
+//   console.log('shi')
+// }
 
 
+//输出1-100之间的素数
+// for(var i = 1; i <= 100; i++){
+//   var isFind = false;
+//   for(var j = 2; j <= i-1; j++){
+//     if(i % j === 0){
+//       isFind = true;
+//       break;
+//     }
+//   }
+//   if(i > 1 && !isFind){
+//     console.log(i)
+//   }
+// }
 
 
+//求1-100之间素数之和
+// var num = 100;
+// sum = 0;
+// for(var i = 1; i <= 100; i++){
+//   var isFind = false;
+//   for(var j = 2; j <= i-1; j++){
+//     if(i % j === 0){
+//       isFind = true;
+//       break;
+//     }
+//   }
+//   if(i > 1 && !isFind){
+//     sum += i;
+//     console.log(i)
+//   }
+// }
+// console.log(sum);
+
+//99乘法表
+// for(var i = 1; i < 10; i++){
+//   y = '';
+//   for(var j = 1; j <= i; j++){
+//     y = y+ `${j}*${i}=${i*j}\t`;
+//   }
+//   console.log(y);
+// }
 
 
+//小游戏
+// 游戏开始
+// ============第1轮============
+// 系统几分， 玩家几分
+// 你的出拳：剪刀
+// 系统出拳：石头
+// 系统赢了！
+// 游戏结束
+
+// console.log('游戏开始！');
+// var gameNum = 1,
+//     player = 0,
+//     pcNum = 0;
+// while(true){
+//   console.log(`============第${gameNum}轮============`);
+//   console.log(`系统${pcNum}分， 玩家${player}分`);
+//   var fist = prompt('请出拳（石头，剪刀，布）');
+//   if(fist === null){
+//     break;
+//   }
+//   if(fist !== '石头' && fist !== '剪刀' && fist !== '布'){
+//     alert('请重新出拳！')
+//     continue;
+//   }
+//   var rand = Math.random();
+//   var pcFise;
+//   if(rand < 0.333){
+//     pcFise = '剪刀'
+//   }else if(rand <0.666){
+//     pcFise = '石头'
+//   }else{
+//     pcFise = '布'
+//   }
+//   console.log(`你的出拳: ${fist}!`);
+//   console.log(`系统出拳：${pcFise}!`)
+//   if(fist == '石头' && pcFise == '剪刀' ||
+//      fist == '剪刀' && pcFise == '布' ||
+//      fist == '布' && pcFise == '石头'
+//   ){
+//     player++;
+//     console.log('你赢了！')
+//   }else if(fist == pcFise){
+//     console.log('平局！')
+//   }else{
+//     pcNum++;
+//     console.log('系统赢了！')
+//   }
+//   gameNum++
+// }
+// console.log(`==========游戏结束！==========`);
+// console.log(`系统${pcNum}分， 玩家${player}分`)
 
 
+//数组
+// var arr = new Array(13);
+// var arr2 = new Array(1,2,3,4,5);
+// var arr3 = [5,6,7,8,9,11];
+// console.log(arr3.length)
+
+// //数组操作
+// var arr = [5,234,654,23];
+// arr[arr.length] = 'asd';   //向数组的末尾添加一项数据
 
 
+// var arr = [5,234,654,23];
+// arr.push('wew');   //向数组的末尾添加一项数据
+// console.log(arr);
+
+// var arr = [5,234,654,23];
+// arr.unshift('wew');   //向数组的开头添加一项数据
+// console.log(arr);
+
+// var arr = [5,234,654,23];
+// arr.splice(2,2)  //从下标2开始删除2个数据
+// console.log(arr);
 
 
+// var arr = [1,2,3,4,5,6,7,8,9,34,35,67,45,345,3456,23];
+// var arr2 = arr.slice(3,10);      //截取新的数组
+// console.log(arr,arr2)
 
+
+// var obj ={
+//   a:'qwe'
+// }
+// console.log('a' in obj)
+
+
+// var obj = {
+//   a: 's',
+//   b: 'd',
+//   c: 'k'
+// }
+// for (const prop in obj) {
+//  console.log(prop)
+// }
+
+//数组遍历
+// var arr = [2,3,4,56,67,55,23]
+// for(var prop in arr){
+//   console.log(arr[prop]);
+// }
+
+
+//创建一个长度为一百的数组 并为每一项赋值为abc   这里使用for循环
+// var arr = new Array(100);
+// for(var i = 0; i < arr.length; i++){
+//     arr[i] = 'abc'
+// }
+// console.log(arr)
+
+var arr = new Array(100);
+arr.fill('abc');
+console.log(arr)

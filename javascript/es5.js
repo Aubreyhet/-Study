@@ -271,7 +271,290 @@
 // console.log(x);
 //     6
 
+//模板字符串
+// var user = {
+//   name: 'aubrey',
+//   gender: '男',
+//   age: 24
+// }
+// var say = `我的名字是${user.name},今年${user.age}岁。`;
+// console.log(say);
 
+// var x = '1';
+// var y = x * 2;
+// console.log(y);             //2
+// console.log(x, typeof x);   //"1" string
+
+
+// var score = 100;
+// if(score < 60){
+//   console.log('加油')
+// }else if(score >= 60 && score < 80){
+//   console.log('合格')
+// }else{
+//   console.log('优秀！')
+// }
+
+
+//用户输入内容 ，如果用户点击取消，，就显示取消，如果输入内容就弹出内容以及内容数据类型
+// var x = prompt();
+// if(x == null){
+//   alert('取消成功！')
+// }else{
+//   x = +x;
+//   if(isNaN(x)){
+//     alert("转换失败！输入有误！")
+//   }else{
+//     alert(x + ': ' + typeof x)
+//   }
+// }
+
+
+
+//提示用户输入一个三位数，若不是三位数则提示用户输入有误，如果输入的为三位数则判断是否能被13整除
+// var x = +prompt('请输入了个三位数：')
+// if(isNaN(x) || x < 100 || x > 999){
+//   alert('请输入正确的内容！')
+// }else{
+//   x % 13 === 0 ? alert(x + '能被13整除！') : alert(x + '不能被13整除！')  
+// }
+
+
+//输入成绩判断 成绩在哪一阶段
+// var x = +prompt('请输入你的成绩：');
+// if(x == null || isNaN(x)){
+//   alert('请输入数字')
+// }else{
+//   if(x >= 0 && x <= 100){
+//     if(x < 60){
+//       alert('C')
+//     }else if(x < 80){
+//       alert('B')
+//     }else{
+//       alert('A')
+//     }
+//   }else{
+//     alert('请输入0 - 100 的数字！')
+//    }
+// }
+
+
+//标准体重计算
+// var gender = prompt('请输入性别：');
+// var height = +prompt('请输入身高：');
+// var weight = +prompt('请输入体重：');
+// if(gender != '男' && gender != '女' || isNaN(height) || isNaN(weight)){
+//   alert('输入有误');
+// }else{
+//   var differ;
+//   if(gender === '女'){
+//     differ = (height - 80) * 0.7;
+//   }else{
+//     differ = (height - 70) * 0.6;
+//   }
+//   if(weight > differ * 1.1){
+//     alert('偏重')
+//   }else if(weight < differ * 0.9){
+//     alert('偏重')
+//   }else{
+//     alert('完美')
+//   } 
+// }
+
+//计算理财情况
+// var yeras = +prompt('请输入存入年限：');
+// var money = +prompt('请输入存入金额（万元）：');
+// if(isNaN(yeras) || isNaN(money)){
+//   alert('输入有误');
+// }else{
+//   var rate = 0.04;
+//   if(money > 50){
+//     rate = 0.45;
+//   }
+//   var balance = money * yeras * rate;
+//   if(balance > 200){
+//     balance += balance * 0.1
+//   }
+//   alert(balance)
+// }
+
+
+//猜拳
+// var fist = prompt('请出拳（剪刀，石头，布）');
+// if(fist === '剪刀' || fist === '石头' || fist === '布'){
+//   var rand = Math.random();
+//   var pcFise;
+//   if(rand < 0.333){
+//     pcFise = '剪刀'
+//   }else if(rand < 0.666){
+//     pcFise = '石头'
+//   }else{
+//     pcFise = '布'
+//   }
+//   alert(`你出的拳：${fist}， 计算机出的拳：${pcFise}`);
+//   if(fist == '剪刀' && pcFise == '布' ||
+//      fist == '布' && pcFise == '石头' || 
+//      fist =='石头' && pcFise == '剪刀'){
+//        alert('你赢了！')
+//      }else if(fist == pcFise){
+//        alert('平局！')
+//      }else{
+//        alert('你输了！')
+//      }
+// }else{
+//   alert('输入有误！')
+// }
+
+
+// var x = 2;
+// switch(x){
+//   case 1:
+//     console.log('1');
+//     break
+//   case 20:
+//     console.log('20')
+//     break
+//   default:
+//     console.log('30')
+// }
+
+
+//输出100个holle world！
+// var x = 0;
+// while(x < 10){
+//   console.log('hello world');
+//   x++;
+// }
+
+
+//for循环输出0-100的数字
+// for(var i = 0; i <= 100; i++){
+//   console.log(i);
+// }
+//输出100-1的数字
+// for(var i = 100; i >= 1; i--){
+//   console.log(i)
+// }
+//输出1-100 的所有奇数
+// for(var i = 1; i <= 100; i++){
+//   if(i % 2 != 0){
+//     console.log(i)
+//   }
+// }
+
+//循环嵌套
+// for(var i = 0; i < 3; i++){
+//   for(var j = 0; j <= 3; j++){
+//     console.log(i, j)
+//     if(i + j == 3){
+//       break;
+//     }
+//   }
+// }
+// for(var i = 0; i < 100; i++){
+//   if(i % 2 == 0){
+//     console.log(i)
+//   }
+// }
+
+
+//1-100数字相加
+// var x =0;
+// for(var i = 0; i <= 100; i++){
+//   x += i;
+// }
+// console.log(x);
+
+//1-10 数字相乘
+// var x = 1;
+// for(var i = 1; i <= 10; i++)
+// {
+//   x *= i;
+// }
+// console.log(x);
+
+//1-100所有奇数相加
+// var x = 0;
+// for(var i = 1; i <= 100; i++){
+//   if(i % 2 !== 0){
+//     x += i;
+//   } 
+// }
+// console.log(x);
+
+// for(var i = 135; i <= 145; i++){
+//   if(i % 26 == 0){
+//     console.log('有能整除的');
+//     break;
+//   }else{
+//     console.log('没有能整除的数字');
+//     break;
+//   }
+// }
+
+// var isFind = false;
+// var max = 180;
+// var min = 135;
+// for(var i = min; i <= max; i++){
+//   if(i % 26 == 0){
+//     isFind = true;
+//     console.log(i);
+//     break;
+//   }
+// }
+// if(isFind){
+//   console.log('存在');
+// }else{
+//   console.log('不存在')
+// }
+
+
+//打印 123 到 568 之间第一个能整除37的数字
+// var isFind = false;
+// var min = 123;
+//     max = 133;
+// for(var i = min; i <= max; i++){
+//   if(i % 37 === 0){
+//     isFind = true;
+//     console.log(i);
+//     break;
+//   }
+// }
+// if(!isFind){
+//   console.log('不存在')
+// }
+
+
+//判断是否为素数
+// var num = 3;
+// var isFind = 0;
+// for(i = 0; i <= num; i++){
+//   if(num % i === 0){
+//     isFind++;
+//   }
+// }
+// if(isFind > 2){
+//   console.log('不是');
+// }else{
+//   console.log('是的')
+// }
+
+//打印1-100 的所有素数
+// for(var i = 1; i <= 100; i++){
+//   var isFind = false;
+//   for(var j = 2; j <= i-1; j++){
+//     if(i % j === 0){
+//       isFind = true;
+//       break;
+//     }
+//   }
+//   if(i > 1 && !isFind){
+//     console.log(i)
+//   }
+// }
+
+
+//
 
 
 

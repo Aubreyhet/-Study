@@ -812,6 +812,266 @@
 // }
 // console.log(arr)
 
-var arr = new Array(100);
-arr.fill('abc');
+// var arr = new Array(100);
+// arr.fill('abc');
+// console.log(arr)
+
+
+// var arr1 = [1,2,3,4,5,6];
+// var arr2 = arr1.slice(0);
+// console.log(arr2);
+// arr2 = [1,2,3,4,5,6]
+//but arr1 !== arr2
+
+
+//数组求和  使用for循环
+// var arr1 = [2,3,4,5,6,7];
+// sum = 0;
+// for(var i = 0; i < arr1.length; i++){
+//   sum += arr1[i];
+// }
+// console.log(sum);
+
+
+//使用数组遍历 for-in
+// var arr2 = [9,8,7,6,5,4,3];
+// sum = 0;
+// for(var i in arr2){
+//   sum += arr2[i] 
+// }
+// console.log(sum)
+
+
+//二维数组
+// var arr1 = [
+//   [1,2,3],
+//   [3,4,5],
+//   [5,6,7]
+// ];
+// sum = 0;
+// for(var i = 0; i < arr1.length; i++){
+//   for(var j = 0; j < arr1[i].length; j++){
+//     sum += arr1[i][j];
+//   }
+// }
+// console.log(sum);
+
+
+// //字符串拼接数组每一项
+// var arr1 = [1,2,3,4,5,6,7];
+//     str = '';
+// for(var i = 0; i < arr1.length; i++){
+//   str += arr1[i];
+//   if(arr1[i] < arr1.length){
+//     str += ','
+//   }
+// }
+// console.log(str);
+
+// //同上
+// var arr1 = [1,2,3,4,5,6,7];
+//     str = arr1.join('-')
+// console.log(str);
+
+
+// //拼接数组
+// var arr1 = [1,2,3,4,5];
+// var arr2 = [6,7,8,9,10];
+// for(var i = 0; i < arr2.length; i++){
+//   // console.log(arr1[arr1.length])
+//   arr1[arr1.length] = arr2[i];
+// }
+// console.log(arr1);
+
+// var arr1 = [1,2,3,4,5];
+// var arr2 = [6,7,8,9,10];
+// var arr3 = arr1.concat(arr2);
+// console.log(arr3);
+
+
+//提示用户输入数组的长度，以及数组的每一项的值  打印该数组
+// var len = +prompt('请输入数组的长度');
+// if(isNaN(len) ||  len < 0){
+//   console.log('输入有误')
+// } else{
+//   var arr = new Array(len);
+//   for(var i = 0; i < len; i++){
+//     arr[i] = prompt(`请输入第${i+1}项的值`);
+//   }
+//   console.log(arr);
+// }
+
+
+//求和数组
+// var arr = [3,45,67,889,89,];
+//     sum = 0;
+// for(var i = 0;i < arr.length; i++){
+//   sum += arr[i];
+// }
+// console.log(sum);
+
+//求和数组function
+// var arr = [2,4,5,6,7,8];
+// function sunfun(arr){
+//   let sum = 0;
+//   for(let i = 0; i < arr.length; i++){
+//     sum += arr[i];
+//   }
+//   return sum;
+// }
+// console.log(sunfun(arr))
+
+
+//输出数组中的所有奇数
+// var arr = [3,4,5,6,7,8,9,21,45,34,54,67,87,66,77,88];
+// let newarr =[];
+// for(let i = 0; i < arr.length; i++){
+//   if(arr[i] % 2 !== 0){
+//     newarr[newarr.length] = arr[i];
+//   }
+// }
+// console.log(newarr);
+//将以上封装function
+// function oddNum(arr){
+//   let newarr = [];
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i] % 2 !== 0){
+//       newarr[newarr.length] = arr[i]
+//     }
+//   }
+//   return newarr;
+// }
+// //调用封装函数
+// let arr1 = [3,4,5,6,7,8,9,67,87,66,77,88];
+// let arr2 = oddNum(arr1)
+// console.log(arr2);
+
+
+// //提取数组中的素数
+// function oddNum(arr){
+//   let newarr = [];
+//   for(let i = 0; i < arr.length; i++){
+//     let isFind = false;
+//     for(let j = 2; j < arr[i]; j++){
+//       if(arr[i] % j === 0){
+//         isFind = true;
+//         break;
+//       }
+//     }  
+//     if(arr[i] >= 2 && !isFind){
+//       newarr.push(arr[i])
+//     } 
+//   }
+//   return newarr;
+// }
+// //调用封装函数
+// let arr1 = [3,4,5,6,7,8,9,67,87,66,77,88];
+// let arr2 = oddNum(arr1)
+// console.log(arr2);
+
+
+// //斐波拉数
+// let len = +prompt('请输入长度：');
+// let arr = [];
+// for(let i = 0; i < len; i++){
+//   if(isNaN(len) || len < 0){
+//     console.log('请输入正确的数字！')
+//   }else{
+//     if(i == 0 || i == 1){
+//       arr.push(1);
+//     }else{
+//       arr.push(arr[i-1]+arr[i-2])
+//     }
+//   }
+// }
+// console.log(arr)
+
+// //封装以上
+// function paula(len){
+//   let arr = [];
+//   for(let i = 0; i < len; i++){
+//     if(isNaN(len) || len < 0){
+//       console.log('请输入正确的数字！')
+//     }else{
+//       if(i == 0 || i == 1){
+//         arr.push(1);
+//       }else{
+//         arr.push(arr[i-1]+arr[i-2])
+//       }
+//     }
+//   }
+//   return arr;
+// }
+// //调用函数
+// console.log(paula(12))
+
+
+// let userInfo = [
+//   {
+//     name: 'Aubrey',
+//     psd: 'ygg1996'
+//   },
+//   {
+//     name: 'Song',
+//     psd: 'song1998'
+//   },
+//   {
+//     name: 'zhangSan',
+//     psd: 'zhangsan1996'
+//   },
+//   {
+//     name: 'liSi',
+//     psd: 'lisi1996'
+//   }
+// ]
+
+
+// function login(userName,userPsd,arr){
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i].psd === userPsd  && arr[i].name === userName){
+//         console.log('登陆成功')
+//         break;
+//     }else{
+//         console.log('登陆失败')
+//         break;
+//     }
+//   }
+// }
+
+// login('Song','song1998',userInfo)
+
+
+// let arr = [
+//   [1,2,3,4,5],
+//   [6,7,8,9,10],
+//   [11,12,13,14,15],
+//   [15,16,17,18,19],
+//   [21,31,41,51,61]
+// ]
+// let sum = 0;
+// for(let i = 0; i < arr.length; i++){
+//   for(let j = 0; j < arr[i].length; j++){
+//     if(i === j || i + j === arr.length - 1){
+//       sum += arr[i][j]
+//     }
+//   }
+// }
+// console.log(sum)
+
+
+//排序  冒泡
+let arr = [3,5,1,98,45,23,66,2,12,4];
+for(let i = 1; i < arr.length; i++){
+  for(let j = 0; j < arr.length - 1; j++){
+    if(arr[j] > arr[j+1]){
+      let tmp = arr[j];
+      arr[j] = arr[j+1];
+      arr[j+1] = tmp;
+
+    }
+  }
+}
 console.log(arr)
+
+
+

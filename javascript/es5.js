@@ -1060,18 +1060,41 @@
 
 
 //排序  冒泡
-let arr = [3,5,1,98,45,23,66,2,12,4];
-for(let i = 1; i < arr.length; i++){
-  for(let j = 0; j < arr.length - 1; j++){
-    if(arr[j] > arr[j+1]){
-      let tmp = arr[j];
-      arr[j] = arr[j+1];
-      arr[j+1] = tmp;
+// let arr = [3,5,1,98,45,23,66,2,12,4];
+// for(let i = 1; i < arr.length; i++){
+//   for(let j = 0; j < arr.length - 1; j++){
+//     if(arr[j] > arr[j+1]){
+//       let tmp = arr[j];
+//       arr[j] = arr[j+1];
+//       arr[j+1] = tmp;
 
+//     }
+//   }
+// }
+// console.log(arr)
+
+
+//判断一个数是不是一个奇数
+// function oddFun(num){
+//   if(num % 2 !== 0){
+//     console.log(num + '是奇数')
+//   }else{
+//     console.log(num + '不是奇数')
+//   }
+// }
+// oddFun(4)
+
+
+//判断数组中的每一项是不是为奇数  是就返回成数组
+function judgeOdd(arr){
+  let isOdds = [];
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 !== 0){
+      isOdds.push(arr[i])
     }
   }
+  return isOdds
 }
-console.log(arr)
-
-
-
+let oldarr = [2,3,4,5,6,7,8,9,11,34,56,57];
+let newarr = judgeOdd(oldarr);
+console.log(newarr)

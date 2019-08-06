@@ -1086,15 +1086,81 @@
 
 
 //判断数组中的每一项是不是为奇数  是就返回成数组
-function judgeOdd(arr){
-  let isOdds = [];
+// function judgeOdd(arr){
+//   let isOdds = [];
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i] % 2 !== 0){
+//       isOdds.push(arr[i])
+//     }
+//   }
+//   return isOdds
+// }
+// let oldarr = [2,3,4,5,6,7,8,9,11,34,56,57];
+// let newarr = judgeOdd(oldarr);
+// console.log(newarr)
+
+
+//输出两个数相加的结果
+// function sumFun(x, y){
+//   return x + y;
+// }
+
+// console.log(sumFun(1,2))
+
+//数组求和
+// function sumArr(arr){
+//   let sumNum = 0;
+//   for(let i = 0; i < arr.length; i++){
+//     sumNum += arr[i]
+//   }
+//   return sumNum
+// }
+// let Arr = [3,4,5,6,7,8,9,10];
+// console.log(sumArr(Arr))
+
+//删除数组末尾指定的数据
+// function deleteArr(arr, num){
+//   let newArr = [];
+//   for(let i = 0; i < arr.length - num; i++){
+//     newArr.push(arr[i]);
+//   }
+//   return newArr
+// }
+// let Arr = [1,2,3,4,5,6,7,8,9]
+// let NewArr;
+// NewArr = deleteArr(Arr,4)
+// console.log(NewArr)
+
+//判断一个数是否是素数
+
+
+// function prime(num){
+//   for(let i = 2; i < num; i++){
+//     if(num % i !== 0){
+//       return true;
+//     }else{
+//       return false;
+//     }
+//   }
+// }
+// let number = 6;
+// if(prime(number)){
+//   console.log(number + '是素数')
+// }else{
+//   console.log(number + '不是素数')
+// }
+// prime()
+
+//返回数组最大值
+
+function maxOfArr(arr){
   for(let i = 0; i < arr.length; i++){
-    if(arr[i] % 2 !== 0){
-      isOdds.push(arr[i])
+    if(arr[i] > arr[i+1]){
+      let tmp = arr[i];
+      arr[i] = arr[i+1];
+      arr[i+1] = tmp;
     }
   }
-  return isOdds
+  return arr[arr.length - 1]
 }
-let oldarr = [2,3,4,5,6,7,8,9,11,34,56,57];
-let newarr = judgeOdd(oldarr);
-console.log(newarr)
+console.log(maxOfArr([2,8,6,12343,100,234,432,12,2356,45,678,98,567]))

@@ -1153,14 +1153,14 @@
 
 //返回数组最大值
 
-function maxOfArr(arr){
-  for(let i = 0; i < arr.length; i++){
-    if(arr[i] > arr[i+1]){
-      let tmp = arr[i];
-      arr[i] = arr[i+1];
-      arr[i+1] = tmp;
-    }
-  }
-  return arr[arr.length - 1]
-}
-console.log(maxOfArr([2,8,6,12343,100,234,432,12,2356,45,678,98,567]))
+// function maxOfArr(arr){
+//   for(let i = 0; i < arr.length; i++){
+//     if(arr[i] > arr[i+1]){
+//       let tmp = arr[i];
+//       arr[i] = arr[i+1];
+//       arr[i+1] = tmp;
+//     }
+//   }
+//   return arr[arr.length - 1]
+// }
+// console.log(maxOfArr([2,8,6,12343,100,234,432,12,2356,45,678,98,567]))

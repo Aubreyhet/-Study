@@ -131,5 +131,101 @@ function getFreqInArr(arr){
             records[n] = 1
         }
     }
-    let 
+    let frequen;
+    for(let prop in records){
+        if(!frequen || records[prop] > frequen.frequency){
+            frequen = {
+                number: +prop,
+                frequency: records[prop]
+            }
+        }
+    }
+    return frequen;
 }
+
+//普通数组排序
+function srrSort(arr){
+    for(let i = 1; i <= arr.length; i++){
+        for(let j = 0; j < arr.length; j++){
+            if(arr[j] > arr[j+1]){
+                let tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp
+            }
+        }
+    }
+    return arr
+}
+
+
+//数组排序
+function sort(arr, callbackFun){
+    if(!callbackFun){
+        callbackFun = function(a,b){
+            if(a > b){
+                return 1;
+            }else if(a === b){
+                return 0;
+            }else{
+                return -1;
+            }
+        }
+    }
+    for(let i = 1; i < arr.length; i++){
+        for(let j = 0; j < arr.length - i; j++){
+            if(callbackFun(arr[j], arr[j+1]) > 0){
+                let tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp
+            }
+        }
+    }   
+}
+
+
+//筛选
+function filter(arr, callbackFun){
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++){
+        if(callbackFun(arr[i], i)){
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
+}
+
+//找到第一个符合条件的数据
+function find(arr, callbackFun){
+    for(let i = 0; i < arr.length; i++){
+        if(callbackFun(arr[i], i)){
+            return arr[i];
+        }
+    }
+}
+
+//找到符合条件的数据的数量
+function count(arr, callbackFun){
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        if(callbackFun(arr[i], i)){
+            sum++;
+        }
+    }
+    return sum;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

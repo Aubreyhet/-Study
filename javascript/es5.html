@@ -17,6 +17,7 @@
 <script src="global.js"></script>
 <script>
     console.log(isOdd(2))
+    //素数
     console.log(isPrime(2))
     console.log(sumOfArr([1,2,3,5,6,7,8]))
     let arr = [67,34,56,567,234,2,345,109,23]
@@ -25,7 +26,42 @@
     console.log(hasEmptyInArr([1,2,3,,4,5,,6,,7]))
     console.log(leapYear(2010))
     console.log(getDays(2009,2));
-    console.log(frequency([1,2,3,4,4,4,5,6,66,6,6,4,4,7,7,7,5,6,5,7]))
+    console.log(getFreqInArr([1,2,3,4,4,4,5,6,66,6,6,4,4,7,7,7,5,6,5,7]))
+    function guess(num){
+        // let num = +prompt('请输入一个大于2的偶数');
+        if(isNaN(num) || num <= 2 || isOdd(num)){
+            console.log('输入有误')
+        }else{
+            for(let i = 2; i <= num - 2; i++){
+                let j = num - i;
+                if(isPrime(i) && isPrime(j)){
+                    console.log(`${i}+${j}`);
+                    return;
+                }
+            }
+        }
+    }
+    guess(90)
+//输出每个月的年份
+function getEverMonth(year){
+    for(let i = 1; i <= 12; i++){
+        let day = getDays(year,i);
+        console.log(`${year}年${i}月有${day}天`)
+    }
+}
+getEverMonth(2100)
+
+//排序
+let arr1 = [5,6,3,4,23,89,1,45]
+let newarr = srrSort(arr1,false);
+console.log(newarr)
+
+//找出数组中的偶数
+let finded = find(arr,isPrime)
+console.log(finded)
+
+let counted = count(arr,isOdd)
+console.log(counted)
 </script>
 </body>
 </html>

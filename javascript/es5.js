@@ -1164,3 +1164,89 @@
 //   return arr[arr.length - 1]
 // }
 // console.log(maxOfArr([2,8,6,12343,100,234,432,12,2356,45,678,98,567]))
+
+
+//函数表达式
+// let a = function test(){
+//   console.log('这是一个函数表达式，可以省略掉函数名')
+// }
+
+
+//普通数字数组排序
+function srrSort(arr, order = true){
+  for(let i = 1; i <= arr.length; i++){
+      for(let j = 0; j < arr.length; j++){
+          if(order){
+              if(arr[j] > arr[j+1]){
+                  let tmp = arr[j];
+                  arr[j] = arr[j+1];
+                  arr[j+1] = tmp
+              }
+          }else{
+              if(arr[j] < arr[j+1]){
+                  let tmp = arr[j];
+                  arr[j] = arr[j+1];
+                  arr[j+1] = tmp
+              }
+          }
+      }
+  }
+  return arr
+}
+
+//字符串首字母大写
+function titleCase(str) {
+  let newStr = str.split(" ");
+  for(let i = 0; i<newStr.length; i++){
+      newStr[i] = newStr[i].slice(0,1).toUpperCase() + newStr[i].slice(1).toLowerCase();
+  }
+  return newStr.join(" ");
+}
+//字符串数组排序
+function strArr(arr, order){
+  for(let i = 0; i < arr.length; i++){
+    if(/^[a-zA-Z]*$/.test(arr[i])){
+      arr[i] = titleCase(arr[i])
+    }else{
+      console.log('汉字没有处理')
+    }
+  }
+  arr = srrSort(arr, order)
+  return arr
+}
+
+//给传入的数组进行排序
+function mysort(arr, order, one){
+  if(!isNaN(arr[0])){
+    arr = srrSort(arr,order)
+  }else if(typeof arr[0] === 'string'){
+    arr = strArr(arr, order)
+  }else if(typeof arr[0] === 'object'){
+    
+  }
+  return arr;
+}
+
+
+// let arrone = ['zai','ahu','Efif','rh','thuu','fhyg','sgjhg'];
+// let arrone = ['曾晓慧','袁刚刚','朱乐纯','罗鹏','王磊','肖周荣']
+let arrone = [{
+  name: 'song',
+  age: 21
+},{
+  name: 'Aubrey',
+  age: 23
+},{
+  name: 'yang',
+  age: 45
+},{
+  name: 'zhao',
+  age: 2
+},{
+  name: 'wang',
+  age: 75
+},{
+  name: 'liu',
+  age: 21
+}]
+console.log(mysort(arrone,true,'age'))

@@ -1173,80 +1173,100 @@
 
 
 //普通数字数组排序
-function srrSort(arr, order = true){
-  for(let i = 1; i <= arr.length; i++){
-      for(let j = 0; j < arr.length; j++){
-          if(order){
-              if(arr[j] > arr[j+1]){
-                  let tmp = arr[j];
-                  arr[j] = arr[j+1];
-                  arr[j+1] = tmp
-              }
-          }else{
-              if(arr[j] < arr[j+1]){
-                  let tmp = arr[j];
-                  arr[j] = arr[j+1];
-                  arr[j+1] = tmp
-              }
-          }
-      }
-  }
-  return arr
-}
+// function srrSort(arr, order = true){
+//   for(let i = 1; i <= arr.length; i++){
+//       for(let j = 0; j < arr.length; j++){
+//           if(order){
+//               if(arr[j] > arr[j+1]){
+//                   let tmp = arr[j];
+//                   arr[j] = arr[j+1];
+//                   arr[j+1] = tmp
+//               }
+//           }else{
+//               if(arr[j] < arr[j+1]){
+//                   let tmp = arr[j];
+//                   arr[j] = arr[j+1];
+//                   arr[j+1] = tmp
+//               }
+//           }
+//       }
+//   }
+//   return arr
+// }
 
-//字符串首字母大写
-function titleCase(str) {
-  let newStr = str.split(" ");
-  for(let i = 0; i<newStr.length; i++){
-      newStr[i] = newStr[i].slice(0,1).toUpperCase() + newStr[i].slice(1).toLowerCase();
-  }
-  return newStr.join(" ");
-}
-//字符串数组排序
-function strArr(arr, order){
-  for(let i = 0; i < arr.length; i++){
-    if(/^[a-zA-Z]*$/.test(arr[i])){
-      arr[i] = titleCase(arr[i])
-    }else{
-      console.log('汉字没有处理')
-    }
-  }
-  arr = srrSort(arr, order)
-  return arr
-}
+// //字符串首字母大写
+// function titleCase(str) {
+//   let newStr = str.split(" ");
+//   for(let i = 0; i<newStr.length; i++){
+//       newStr[i] = newStr[i].slice(0,1).toUpperCase() + newStr[i].slice(1).toLowerCase();
+//   }
+//   return newStr.join(" ");
+// }
+// //字符串数组排序
+// function strArr(arr, order){
+//   for(let i = 0; i < arr.length; i++){
+//     if(/^[a-zA-Z]*$/.test(arr[i])){
+//       arr[i] = titleCase(arr[i])
+//     }else{
+//       console.log('汉字没有处理')
+//     }
+//   }
+//   arr = srrSort(arr, order)
+//   return arr
+// }
 
-//给传入的数组进行排序
-function mysort(arr, order, one){
-  if(!isNaN(arr[0])){
-    arr = srrSort(arr,order)
-  }else if(typeof arr[0] === 'string'){
-    arr = strArr(arr, order)
-  }else if(typeof arr[0] === 'object'){
+// //给传入的数组进行排序
+// function mysort(arr, order, one){
+//   if(!isNaN(arr[0])){
+//     arr = srrSort(arr,order)
+//   }else if(typeof arr[0] === 'string'){
+//     arr = strArr(arr, order)
+//   }else if(typeof arr[0] === 'object'){
     
+//   }
+//   return arr;
+// }
+
+
+// // let arrone = ['zai','ahu','Efif','rh','thuu','fhyg','sgjhg'];
+// // let arrone = ['曾晓慧','袁刚刚','朱乐纯','罗鹏','王磊','肖周荣']
+// let arrone = [{
+//   name: 'song',
+//   age: 21
+// },{
+//   name: 'Aubrey',
+//   age: 23
+// },{
+//   name: 'yang',
+//   age: 45
+// },{
+//   name: 'zhao',
+//   age: 2
+// },{
+//   name: 'wang',
+//   age: 75
+// },{
+//   name: 'liu',
+//   age: 21
+// }]
+// console.log(mysort(arrone,true,'age'))
+
+
+//创建角色构造函数
+function Charactor (name,attack,defense,life,crit){
+  this.name = name,
+  this.attack = attack,
+  this.defense = defense,
+  this.life = life,
+  this.crit = crit,
+  this.hit = function(ctor){
+
+  },
+  this.print = function(){
+    console.log(`${this.name}：\t生命值${this.life}\t攻击力${this.attack}\t防御力${this.defense}\t暴击率${this.crit}\t`)
   }
-  return arr;
 }
-
-
-// let arrone = ['zai','ahu','Efif','rh','thuu','fhyg','sgjhg'];
-// let arrone = ['曾晓慧','袁刚刚','朱乐纯','罗鹏','王磊','肖周荣']
-let arrone = [{
-  name: 'song',
-  age: 21
-},{
-  name: 'Aubrey',
-  age: 23
-},{
-  name: 'yang',
-  age: 45
-},{
-  name: 'zhao',
-  age: 2
-},{
-  name: 'wang',
-  age: 75
-},{
-  name: 'liu',
-  age: 21
-}]
-console.log(mysort(arrone,true,'age'))
+let hero = new Charactor('英雄',100,200,500,30);
+let monster = new Charactor('怪兽',100,300,300,10);
+hero.print()
+monster.print()

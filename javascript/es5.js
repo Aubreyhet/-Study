@@ -1253,20 +1253,63 @@
 
 
 //创建角色构造函数
-function Charactor (name,attack,defense,life,crit){
-  this.name = name,
-  this.attack = attack,
-  this.defense = defense,
-  this.life = life,
-  this.crit = crit,
-  this.hit = function(ctor){
+// function Charactor (name,attack,defense,life,crit){
+//   this.name = name,
+//   this.attack = attack,
+//   this.defense = defense,
+//   this.life = life,
+//   this.crit = crit,
+//   this.hit = function(ctor){
 
-  },
-  this.print = function(){
-    console.log(`${this.name}：\t生命值${this.life}\t攻击力${this.attack}\t防御力${this.defense}\t暴击率${this.crit}\t`)
-  }
-}
-let hero = new Charactor('英雄',100,200,500,30);
-let monster = new Charactor('怪兽',100,300,300,10);
-hero.print()
-monster.print()
+//   },
+//   this.print = function(){
+//     console.log(`${this.name}：\t生命值${this.life}\t攻击力${this.attack}\t防御力${this.defense}\t暴击率${this.crit}\t`)
+//   }
+// }
+// let hero = new Charactor('英雄',100,200,500,30);
+// let monster = new Charactor('怪兽',100,300,300,10);
+// hero.print()
+// monster.print()
+
+//求斐波拉数列
+// function fijian(n){
+//   if(n ===1 || n === 2){
+//     return n;
+//   }
+//   return fijian(n - 1) + fijian(n -2);
+// }
+// console.log(fijian(7))
+
+
+//阶乘
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

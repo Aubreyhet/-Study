@@ -6,8 +6,8 @@ let myPrivateFun = {
      * @param {number} num 
      * @returns {boolean} 
      */
-    isOdd: function (num){
-        return num % 2 !==0;
+    isOdd: function (num) {
+        return num % 2 !== 0;
     }
     ,
     //判断一个数是否为素数
@@ -16,12 +16,12 @@ let myPrivateFun = {
      * @param {number} num 
      * @returns {boolean}
      */
-    isPrime: function(num){
-        if(num < 2){
+    isPrime: function (num) {
+        if (num < 2) {
             return false
         }
-        for(let i = 2; i < num -1; i++){
-            if(num % i === 0){
+        for (let i = 2; i < num - 1; i++) {
+            if (num % i === 0) {
                 return false;
             }
         }
@@ -34,9 +34,9 @@ let myPrivateFun = {
      * @param {array} arr 
      * @returns {number}
      */
-    sumOfArr: function(arr){
+    sumOfArr: function (arr) {
         let sum = 0;
-        for(let i = 0; i < arr.length; i++){
+        for (let i = 0; i < arr.length; i++) {
             sum += arr[i]
         }
         return sum
@@ -48,13 +48,13 @@ let myPrivateFun = {
      * @param {array} arr 
      * @returns {number}
      */
-    maxOfArr: function(arr){
-        if(arr.length === 0){
+    maxOfArr: function (arr) {
+        if (arr.length === 0) {
             return;
         }
         let max = arr[0];
-        for(let i = 1; i < arr.length; i++){
-            if(arr[i] > max){
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
                 max = arr[i]
             }
         }
@@ -67,13 +67,13 @@ let myPrivateFun = {
      * @param {array} arr 
      * @returns {number}
      */
-    minOfArr: function(arr){
-        if(arr.length === 0){
+    minOfArr: function (arr) {
+        if (arr.length === 0) {
             return;
         }
         let min = arr[0];
-        for(let i = 1; i < arr.length; i++){
-            if(arr[i] < min){
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
                 min = arr[i]
             }
         }
@@ -85,10 +85,10 @@ let myPrivateFun = {
      * 判断数组是否为稀松数组
      * @param {array} arr 
      */
-    hasEmptyInArr: function(arr){
+    hasEmptyInArr: function (arr) {
         //稀松数组 下标连续
-        for(let i = 0; i < arr.length; i++){
-            if(!(i in arr)){
+        for (let i = 0; i < arr.length; i++) {
+            if (!(i in arr)) {
                 return true;
             }
         }
@@ -100,19 +100,19 @@ let myPrivateFun = {
      * 判断某年是否为闰年
      * @param {number} year 
      */
-    leapYear: function(year){
+    leapYear: function (year) {
         return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
     }
     ,
     //写一个函数返回某年某月的天数
-    getDays: function(year,month){
-        if(month === 2){
+    getDays: function (year, month) {
+        if (month === 2) {
             return this.leapYear(year) ? 29 : 28;
         }
-        else if(month < 8 && this.isOdd(month) || month >= 8 && !this.isOdd(month)){
+        else if (month < 8 && this.isOdd(month) || month >= 8 && !this.isOdd(month)) {
             return 31;
         }
-        else{
+        else {
             return 30;
         }
     }
@@ -123,19 +123,19 @@ let myPrivateFun = {
      * @param {array} arr 
      * @returns {Object}
      */
-    getFreqInArr: function(arr){
+    getFreqInArr: function (arr) {
         let records = {};
-        for(let i = 0; i < arr.length; i++){
+        for (let i = 0; i < arr.length; i++) {
             let n = arr[i];
-            if(records[n]){
+            if (records[n]) {
                 records[n]++
-            }else{
+            } else {
                 records[n] = 1
             }
         }
         let frequen;
-        for(let prop in records){
-            if(!frequen || records[prop] > frequen.frequency){
+        for (let prop in records) {
+            if (!frequen || records[prop] > frequen.frequency) {
                 frequen = {
                     number: +prop,
                     frequency: records[prop]
@@ -146,68 +146,76 @@ let myPrivateFun = {
     }
     ,
     //普通数组排序
-    srrSort: function(arr){
-        for(let i = 1; i <= arr.length; i++){
-            for(let j = 0; j < arr.length - i; j++){
-                if(arr[j] > arr[j+1]){
+    srrSort: function (arr) {
+        for (let i = 1; i <= arr.length; i++) {
+            for (let j = 0; j < arr.length - i; j++) {
+                if (arr[j] > arr[j + 1]) {
                     let tmp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = tmp
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp
                 }
             }
         }
         return arr
     }
     ,
-    myArrsort: function(arr, callbackFun){
-        if(!callbackFun){
-            callbackFun = function(a,b){
-                if(a > b){
+    myArrsort: function (arr, callbackFun) {
+        if (!callbackFun) {
+            callbackFun = function (a, b) {
+                if (a > b) {
                     return 1;
-                }else if(a === b){
+                } else if (a === b) {
                     return 0;
-                }else{
+                } else {
                     return -1;
                 }
             }
         }
-        for(let i = 1; i < arr.length; i++){
-            for(let j = 0; j < arr.length - i; j++){
-                if(callbackFun(arr[j], arr[j+1]) > 0){
+        for (let i = 1; i < arr.length; i++) {
+            for (let j = 0; j < arr.length - i; j++) {
+                if (callbackFun(arr[j], arr[j + 1]) > 0) {
                     let tmp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = tmp
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp
                 }
             }
-        }   
+        }
     }
     ,
-    filter: function(arr, callbackFun){
+    filter: function (arr, callbackFun) {
         let newArr = [];
-        for(let i = 0; i < arr.length; i++){
-            if(callbackFun(arr[i], i)){
+        for (let i = 0; i < arr.length; i++) {
+            if (callbackFun(arr[i], i)) {
                 newArr.push(arr[i])
             }
         }
         return newArr
     }
     ,
-    find: function(arr, callbackFun){
-        for(let i = 0; i < arr.length; i++){
-            if(callbackFun(arr[i], i)){
+    find: function (arr, callbackFun) {
+        for (let i = 0; i < arr.length; i++) {
+            if (callbackFun(arr[i], i)) {
                 return arr[i];
             }
         }
     }
     ,
-    count: function(arr, callbackFun){
+    count: function (arr, callbackFun) {
         let sum = 0;
-        for(let i = 0; i < arr.length; i++){
-            if(callbackFun(arr[i], i)){
+        for (let i = 0; i < arr.length; i++) {
+            if (callbackFun(arr[i], i)) {
                 sum++;
             }
         }
         return sum;
+    },
+    /**
+     * 得到随机整数
+     * @param {*} max 随机最小
+     * @param {*} min 随机最大(取不到最大值)
+     */
+    myRandom: function (max, min) {
+        return parseInt(Math.random() * (max - min) + min)
     }
 }
 

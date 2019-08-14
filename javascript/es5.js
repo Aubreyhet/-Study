@@ -50,7 +50,7 @@
 //      boolean
 // console.log(typeof null);
 //      object   js的特征
- 
+
 
 //声明变量
 // var pid;
@@ -1222,7 +1222,7 @@
 //   }else if(typeof arr[0] === 'string'){
 //     arr = strArr(arr, order)
 //   }else if(typeof arr[0] === 'object'){
-    
+
 //   }
 //   return arr;
 // }
@@ -1282,18 +1282,54 @@
 
 
 //阶乘
+// function factorial(sum){
+//   if(sum === 1){
+//     return 1
+//   }
+//   return sum * factorial(sum - 1)
+// }
+
+// console.log(factorial(4))
 
 
+//汉诺塔
+// function hannuo(pill1,pill2,pill3,num){
+//   if(num === 1){
+//     console.log(`${pill1} --> ${pill3}`)
+//   }else{
+//     hannuo(pill1,pill3,pill2,num - 1)
+//     console.log(`${pill1} --> ${pill3}`);
+//     hannuo(pill2,pill1,pill3,num - 1)
+//   }
+// }
+// hannuo('A','B','C',3)
 
 
+//将伪数组转换为真数组
+// function test(){
+//   let arr = Array.from(arguments);
+//   console.log(arr, Array.isArray(arr))
+// }
+// test(1,2,3,4)
 
 
+//作业
+// let arr = [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6]
+// let newArr = arr.filter(function (i) {
+//   return i >= 0
+// }).map(function(item){
+//   return item * item
+// }).map(function(item){
+//   return item + item
+// }).reduce(function(sum, item){
+//   return  sum + item
+// })
+// console.log(newArr)
 
-
-
-
-
-
+function myRandom(max,min){
+  return parseInt(Math.random() * (max - min) + min) 
+}
+console.log(myRandom(1,10))
 
 
 

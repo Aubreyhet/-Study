@@ -216,7 +216,39 @@ let myPrivateFun = {
      */
     myRandom: function (max, min) {
         return parseInt(Math.random() * (max - min) + min)
-    }
+    },
+    /**
+     * 根据生日计算年龄
+     * @param {*} year 
+     * @param {*} month 
+     * @param {*} day 
+     * @returns {number} 年龄
+     */
+    getAge: function (year,month,day){
+        let nowtime = new Date();
+        let dec = nowtime.getFullYear() - year;
+        let thisYear = new Date(nowtime.getFullYear(),month-1,day)
+        if(thisYear > nowtime){
+            dec--;
+        }
+        return dec
+    },
+    /**
+     * 计算还有多少天过生日
+     * @param {*} month 
+     * @param {*} day 
+     */
+    getDaysToBirthday: function(month,day){
+        let now = new Date();
+        let thisYear = now.getFullYear();
+        let birthday = new Date(thisYear,month-1,day);
+        if(birthday < now){
+          birthday.setFullYear(thisYear+1)
+        }
+        let decTime = birthday - now;
+        let days = decTime / (24*60*60*1000);
+        return Math.ceil(days);
+      }
 }
 
 

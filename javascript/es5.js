@@ -1,3 +1,4 @@
+
 // document.write("你好");
 // document.write(7);
 // document.write(8);
@@ -1326,10 +1327,127 @@
 // })
 // console.log(newArr)
 
-function myRandom(max,min){
-  return parseInt(Math.random() * (max - min) + min) 
-}
-console.log(myRandom(1,10))
+// function myRandom(max,min){
+//   return parseInt(Math.random() * (max - min) + min) 
+// }
+// console.log(myRandom(1,10))
+
+
+
+// //找到字符串中出现次数最多的字符  打印字符和出现的频率
+// function getFreqInArr(arr) {
+//   let records = {};
+//   for (let i = 0; i < arr.length; i++) {
+//       let n = arr[i];
+//       if (records[n]) {
+//           records[n]++
+//       } else {
+//           records[n] = 1
+//       }
+//   }
+//   let frequen;
+//   for (let prop in records) {
+//       if (!frequen || records[prop] > frequen.frequency) {
+//           frequen = {
+//               number: prop,
+//               frequency: records[prop]
+//           }
+//       }
+//   }
+//   return frequen;
+// }
+// let arr = 'jhsdhghsdklfgawdhdskjkjnvakndsvnadnfkvnadvjfnvo;andfvndfnvjhdofnaenfavaoh'
+// let newarr = Array.from(arr)
+// console.log(getFreqInArr(newarr))
+
+
+// //大驼峰命名法
+// function bigHump(str) {
+//   let resule = '';
+//   let empties = ' ';
+//   for(let i = 0; i < str.length; i++){
+//     if(!empties.includes(str[i])){
+//       if(empties.includes(str[i - 1]) || i === 0){
+//         resule += str[i].toUpperCase();
+//       }else{
+//         resule += str[i]
+//       }
+//     }
+//   }
+//   return resule;
+// }
+
+
+// let mystr = 'yuan gang gang'
+// console.log(bigHump(mystr))
+
+
+// //  年-月-日 时：分：秒
+// function getDateString(date){
+//   let year = date.getFullYear().toString().padStart(4,'0')
+//   let month = date.getMonth().toString().padStart(2,'0')
+//   let day = date.getDate().toString().padStart(2,'0')
+//   let hours = date.getHours().toString().padStart(2,'0')
+//   let minutes = date.getMinutes().toString().padStart(2,'0')
+//   let seconds = date.getSeconds().toString().padStart(2,'0')
+//   return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+// }
+// let date = new Date()
+// console.log(getDateString(date))
+
+// //得到年龄
+// function getAge(year,month,day){
+//   let nowtime = new Date();
+//   let dec = nowtime.getFullYear() - year;
+//   let thisYear = new Date(nowtime.getFullYear(),month,day)
+//   if(thisYear > nowtime){
+//     dec--;
+//   }
+//   return dec
+// }
+
+// console.log(getAge(1996,3,08))
+
+
+// 计算还有几天过生日
+// function decDay (month,day){
+//   let now = new Date();
+//   let thisYear = now.getFullYear();
+//   let birthday = new Date(thisYear,month-1,day);
+//   if(birthday < now){
+//     birthday.setFullYear(thisYear+1)
+//   }
+//   let decTime = birthday - now;
+//   let days = decTime / (24*60*60*1000);
+//   return Math.ceil(days);
+// }
+
+// console.log(decDay(8,16))
+
+//根据系统当前的月份打印出每天周几
+// function getDays(year, month) {
+//   if (month === 2) {
+//       return this.leapYear(year) ? 29 : 28;
+//   }
+//   else if (month < 8 && this.isOdd(month) || month >= 8 && !this.isOdd(month)) {
+//       return 31;
+//   }
+//   else {
+//       return 30;
+//   }
+// }
+// function print(){
+//   let now = new Date();
+//   let year = now.getFullYear();
+//   let thisMonth = now.getMonth() + 1;
+//   //得到这个月几天
+//   let day = getDays(year,thisMonth)
+//   let week = now.getDay
+//   for(let i = 0; i < day; i++){
+//     console.log(`${year}年${thisMonth}月${day}日 星期`)
+//   }
+// }
+// print()
 
 
 

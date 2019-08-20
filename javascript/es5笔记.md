@@ -797,7 +797,52 @@ js中正则表达式表现为一个对象，是由构造函数RegExp
 非捕获组
 
 
+# web api概述
+ECMAscript标准
+浏览器宿主环境（webapi）
 
+
+# 获取dom节点对象
+## 旧的获取dom节点
+
+dom 0
+- document.body 获取body元素节点
+- document.head 获取head元素节点
+- document.links 获取文档所有连接节点  是一个类数组
+- document.anchors 获取页面上所有的锚连接（具有name属性）
+- document.forms:获取页面上所有form元素节点
+
+## 新的dom获取节点方式
+- document.getElementById:获取文档中具有该id的元素 唯一
+- document.getElementsByTagName: 通过元素名称获取dom元素  类数组
+- document.getElementsByClassName: 通过类名称获取dom元素 类数组 ie9及以上
+- document.getElementsByName: 通过元素的name属性获取元素节点
+- document.querySelector: 通过css选择器获取dom元素 得到一个 ie8 及以上
+- document.querySelectorAll: 通过css选择器获取所有符合条件的dom节点  ie8及以上 类数组 静态的
+细节：
+1.所有获取类数组的方法中除了querySelectorAll得到的数组是静态的其他的都死动态更新的
+2.getElementById 执行效率最高
+3.书写了id的元素 会自动成为window属性  他是实时的单对象 
+4.getElementsByTagName,getElementsByClassName,querySelector,querySelectorAll 可以作为其他节点对象的方法使用 
+### 根据节点关系获取节点
+- parentNade: 获取该节点的父节点
+- firstChild: 获取该节点的第一个子节点
+- lastChild: 获取该节点的最后一个子节点
+- nextSibling: 获取该节点的弟弟元素
+- previousSibling: 获取该节点的哥哥节点
+- childNode:获取所有子节点
+- attribues: 获取某个元素的属性节点
+### 获取元素节点
+- parentElemtent: 获取父元素
+- previousElementSibling: 获取上一个兄弟元素
+- nextElementSibling: 获取下一个兄弟元素
+- children: 获取子元素
+- firstElementChild: 获取第一个子元素
+- lastElementChild: 获取最后一个子元素
+### 获取节点信息
+- nodeName: 获取节点名称
+- nodeValue: 获取节点的值
+- nodeType: 节点类型  是一个数字
 
 
 

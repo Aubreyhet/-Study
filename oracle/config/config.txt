@@ -1,0 +1,29 @@
+--登录
+    sqlplus 用户名/密码
+    sqlplus scott/orcl
+
+--以dba权限登录
+    sqlplus / as sysdba
+
+-- 切换用户
+    conn 用户名
+    conn system
+    输入密码:orcl
+
+--切换到dba用户
+    conn / as sysdba
+
+--查看当前用户
+    show user
+
+--退出登陆
+    exit
+
+--用户被锁了怎么办
+    解锁（前提是dba身份登陆）
+    解锁语句： alter user 用户(scott) account unlock
+
+--密码忘记了怎么办
+    修改密码：dba权限登录
+    alter user 用户 identified by 新密码
+

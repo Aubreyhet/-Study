@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>vue.js</title>
+</head>
+<body>
+    <!-- vue-app 是根容器 -->
+    <div id="vue-app">
+        <h1>{{greet('afternoon')}}</h1>
+        <p>名字：{{ name }}</p>
+        <p>工作：{{ job }}</p>
+        <a v-bind:href="website">百度</a>
+        <input type="text" v-bind:value="name">
+        <p v-html='websiteTag'></p>
+        <h1>Events</h1>
+        <button @click.once='add(1)'>涨</button>
+        <button @click='subtract(1)'>减</button>
+        <button v-on:dblclick='add(10)'>加十</button>
+        <button v-on:dblclick='subtract(10)'>减十</button>
+        <p>My age is {{ age }}</p>
+        <div id="canvas" v-on:mousemove='updateXY'>{{ X }},{{ Y }} - <span v-on:mousemove.stop=''>Stop Moving</span></div>
+        <a href="http://www.baidu.com" v-on:click.prevent='alert()'>baidu </a>
+        <hr>
+        <h1> 键盘 Events </h1>
+        <label> 姓名: </label>
+        <input type="text" v-on:keyup.enter='logName'>
+        <label> 年龄: </label>
+        <input type="text" v-on:keyup.alt.enter='logAge'>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>

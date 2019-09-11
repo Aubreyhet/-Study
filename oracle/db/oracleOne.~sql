@@ -19,6 +19,9 @@ drop table t_student
 -- 动态往表里边添加入学字段 修改的是表结构
 alter table t_student add f_join_date date
 
+-- 添加年龄列
+alter table student add f_age int
+
 -- 修改某一个字敦的长度
 alter table t_student modify(f_hobbys varchar2(200))
 
@@ -81,6 +84,10 @@ update student set f_hobbys = f_hobbys || '/吃零食' where f_sex = '男';
 
 -- 修改编号为6的学生爱好为相亲 入学日期为2018-8-8
 update student set f_hobbys = '相亲', f_join = '2018-8-8'where f_id = 6;
+
+--修改年龄为 20到25的兴趣爱好 为lol
+update student set f_hobbys = f_hobbys || f_hobbys = '/lol' where f_age >= 20 f_age <= 25; 
+
 
 
 

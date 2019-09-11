@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>vue.js</title>
+</head>
+<body>
+    <!-- vue-app 是根容器 -->
+    <div id="vue-app">
+        <h1>v-if条件</h1>
+        <button @click='error = !error'>Toggle Error</button>
+        <button @click='success = !success'>Toggle Success</button>
+        <!-- <p v-if='error'>网络连接错误：404</p>
+        <p v-else-if='success'>网络连接成功：200</p> -->
+        <p v-show='error'>网络连接错误：404</p>
+        <p v-show='success'>网络连接成功：200</p>
+        <hr>
+        <h1>v-for 循环</h1>
+        <!-- 数组遍历 -->
+        <ul>
+            <li v-for='character in characters'>
+                {{character}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for='(user,index) in users' :key='index'>
+                {{index+1}}.{{user.name}}今年{{user.age}}岁。
+            </li>
+        </ul>
+        <template v-for='(user,index) in users'>
+            <h3>{{index+1}}.{{user.name}}</h3>
+            <p>Age-{{user.age}}</p>
+        </template>
+        <template v-for='(user,index) in users' :key='index'>
+            <div v-for='(val,key) in user'>
+                <p>{{key}}--{{val}}</p>
+            </div>
+        </template>
+    </div>
+<script src="app.js"></script>
+</body>
+</html>

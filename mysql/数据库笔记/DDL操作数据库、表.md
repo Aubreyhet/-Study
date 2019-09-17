@@ -168,6 +168,62 @@
         * 公式：开始的索引 = （当前的页码 - 1）* 每页显示的条数
         * MySQL 独有的分页
 ## 约束
+    * 基本概念： 对表中数据进行限定，保证数据的正确性、有效性、完整性。
+    * 分类：
+        * 主键约束：primary key
+        * 非空约束：not null
+        * 唯一约束：unique
+        * 外键约束: foreign key
+    * 非空约束
+        * 添加：创建时添加约束 --> -- 创建表的时候添加约束
+                                CREATE TABLE stu(
+                                    id int,
+                                    name varchar(20) not null
+                                )
+               创建后添加约束 --> -- 创建表之后添加约束
+                                alter table stu add sex varchar(10) not null;
+        * 删除：-- 删除约束 -->    alter table stu add sex varchar(10)
+    * 唯一约束：unique 值不能重复
+        * 添加： 创建时添加唯一约束  -- 创建表时添加唯一约束
+                                    create table stu(
+                                        id int,
+                                        phone_number varchar(20) unique  -- 添加唯一约束
+                                    );
+            创建后添加唯一约束  -- 创建后添加唯一约束  创建后添加唯一约束 要看数据数据是否具有唯一性
+                            alter table stu modify phone_number varchar(20) unique;
+        * 删除唯一约束 -- 删除唯一约束
+                    -- alter table stu modify phone_number varchar(20);  --  这样是删不了唯一约束的
+                    alter table stu drop index phone_number;
+    * 主键约束：primary key
+        * 注意：1.含义： 非空且唯一  2.一张表只能有一个字段为主键 3.主键是表中记录的唯一标识
+        * 创建表时 添加主键约束 
+                create table stu(
+                    id int primary key,
+                    name varchar(20)
+                );
+        * 删除主键   -- 删除主键
+                    -- 错误alter table stu modify id int;
+                    alter table stu drop primary key;
+        * 创建之后添加主键约束  -- 创建完表之后添加主键约束
+                    alter table stu modify id int primary key;
+    * 自动增长(一般是和主键一块使用)
+        * 概念:如果某一列数据是数值类型的,使用auto_increment 可以来完成值的自动增长
+        * 创建表的时候添加主键并且主键自增长
+            create table stu(
+                id int primary key auto_increment,
+                name varchar(20)
+            );
+        * 删除主键约束  -- 删除主键约束的自动增长(主键约束是删除不掉的)
+                        alter table stu modify id int;
+        * 创建之后添加主键的自动增长 -- 创建表之后添加主键自动增长
+                        alter table stu modify id int auto_increment;
+    * 外键约束: foreign key
+        * 在创建表是添加外键约束 语法: 
+            create table 表名(
+                .....
+                外键列
+                constraint 外键名称 foreign key (外键列名称) references 主表名称(主键列名称)
+            );
 ## 多表关系
 ## 范式
 ## 数据库备份还原

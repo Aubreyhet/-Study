@@ -85,20 +85,23 @@ create table employees(
 -- 添加部门
 insert into department VALUES(null,'研发部','上海'),(null,'销售部','南京');
 
-delete from department where id = 4;
+-- 添加人员信息
+insert into employees (name,age,dep_id) values('小王',23,2);
 
+-- 删除外键
+alter table employees drop foreign key emp_dept_fk;
 
+-- 添加外键
+alter table employees add CONSTRAINT emp_dept_fk foreign key (dep_id) REFERENCES department(id);
 
+-- 级联设置  -- 添加外键是设置级联更新
+alter table employees add CONSTRAINT emp_dept_fk foreign key (dep_id) REFERENCES department(id) on update cascade;
 
+-- 级联删除 添加外键时 添加级联删除
+alter table employees add CONSTRAINT emp_dept_fk foreign key (dep_id) REFERENCES department(id) on update cascade on delete cascade;
 
-
-
-
-
-
-
-
-
+-- 删除部门字段
+delete from department where id = 1;
 
 
 

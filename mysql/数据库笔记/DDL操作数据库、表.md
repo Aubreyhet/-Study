@@ -217,13 +217,19 @@
                         alter table stu modify id int;
         * 创建之后添加主键的自动增长 -- 创建表之后添加主键自动增长
                         alter table stu modify id int auto_increment;
-    * 外键约束: foreign key
+    * 外键约束: foreign key，让表和表产生关系，从而保证数据的正确性
         * 在创建表是添加外键约束 语法: 
             create table 表名(
                 .....
                 外键列
                 constraint 外键名称 foreign key (外键列名称) references 主表名称(主键列名称)
             );
+        * 删除外键 -- 删除外键
+                    alter table 外键表名称 drop foreign key 外键名称;
+        * 在创建表之后添加外键  -- 添加外键
+                    alter table 外键表名称 add CONSTRAINT 外键名称 foreign key (外键字段名称) REFERENCES 主表名称(主表外键字段);
+        * 级联操作
+            * 添加级联操作： alter table 表名 add constraint 外键名称 foreign key (外键字段名称) references 主表名称(主表列名称) on update cascade on delete cascade;
 ## 多表关系
 ## 范式
 ## 数据库备份还原

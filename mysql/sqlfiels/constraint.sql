@@ -111,7 +111,6 @@ delete from department where id = 1;
 
 
 
-
 -- 查询部门信息
 select * from department;
 

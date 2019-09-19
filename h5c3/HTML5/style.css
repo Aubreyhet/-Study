@@ -1,0 +1,36 @@
+*{
+    margin :0 auto;
+    padding: 0;
+}
+/* ie9需要将标签转换为块级元素 */
+header{
+    background :#333;
+    height: 100px;
+    width: 100%;
+}
+footer{
+    background :red;
+    height: 100px;
+    width: 100%;
+}
+nav{
+    height: 40px;
+    width: 100%;
+    background-color: green;
+}
+main{
+    width: 100%;
+    height: 400px;
+    background-color:#ccc;
+}
+main > article{
+    float: left;
+    width: 80%;
+    height: 100%;
+    background-color: blue;
+}
+main > aside{
+    float: right;
+    width:20%;
+    height: 400px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>网页头部</header>
+    <nav>导航</nav>
+    <main>
+        <article>左边</article>
+        <aside>右边</aside>
+    </main>
+    <footer>网页底部</footer>
+    <!-- 引入第三方插件解决h5在ie8 及以下的兼容性问题 -->
+    <script src="html5shiv.min.js"></script>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <form action="">
+        用户名：<input type="text" name="userName"><br>
+        密码：<input type="password" name="password"><br>
+        email：<input type="email" name="email" ><br>
+        电话：<input type="tel" name="tel"><br>
+        网址：<input type="url" name="url"><br>
+        <!-- number 配合max min使用  限定数字范围 -->
+        数量：<input type="number" value="60" max="100" min="0"><br>
+        搜索：<input type="search" name="search"><br>
+        范围：<input type="range" name="range"><br>
+        颜色：<input type="color" name="color"><br>
+        时间：<input type="time" name="time"><br>
+        日期：<input type="date" name="date"><br>
+        日期时间：<input type="datetime" name="datetime"><br>
+        日期时间：<input type="datetime-local" name="datetimelocal"><br>
+        <input type="submit" value="提交"><br>
+    </form>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <form action="">
+        用户名：<input type="text" name="username" placeholder="请输入用户名" autofocus autocomplete="on" required><br>
+        手机号：<input type="tel" name="tel" required pattern="^(\+86)?1\d{10}$"><br>
+        文件：<input type="file" name="file" multiple><br>
+        <input type="submit" value="提交"><br>
+    </form>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <form action="">
+        <!-- 可以输入的下拉选择框 -->
+        专业：<input type="text" list="sub">
+        <!-- 使用datalist创建选择列表 -->
+        <datalist id="sub">
+            <!-- 创建选项值：value：具体的值 label:提示信息，辅助值 -->
+            <option value="前端" label="人数多"></option>
+            <option value="java" label="不知到"></option>
+            <option value="c" label="这个"></option>
+            <option value="php" label="也是"></option>
+        </datalist>
+        <br>
+        
+
+
+         <!-- 可以输入的下拉选择框 -->
+         网址：<input type="url" list="url">
+         <!-- 使用datalist创建选择列表 -->
+         <datalist id="url">
+             <!-- 创建选项值：value：具体的值 label:提示信息，辅助值 -->
+             <option value="http://www.baidu.com"></option>
+             <option value="http://www.souhu.com"></option>
+             <option value="http://www.douban.com"></option>
+             <option value="http://www.jingdong.com"></option>
+         </datalist>
+    </form>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <form action="">
+        <input type="text" name="uesrname" id="username">
+        <input type="tel" name="tle" id="tel">
+    </form>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <progress max="100"></progress>
+    <meter></meter>
+    <script>
+        document.getElementById('username').oninput = function(){
+            console.log(this.value);
+        }
+        document.getElementById('username').oninvalid = function(){
+            console.log(this.value);
+        }
+    </script>
+</body>
+</html>

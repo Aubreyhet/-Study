@@ -34,3 +34,8 @@ main > aside{
     width:20%;
     height: 400px;
 }
+.one,.two{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+}

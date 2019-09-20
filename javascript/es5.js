@@ -1454,6 +1454,15 @@
 //将空白替换为，形式
 
 
+let user = '独倚角有';
+function first(){
+  console.log(user);
+};
+function second(){
+  let user = '工程师';
+  first();
+}
+second();
 
 
 

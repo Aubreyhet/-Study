@@ -91,3 +91,10 @@
     - onoffline:网络断开时触发这个事件
 ## 全屏接口
     - 
+## 文件操作
+    - FileReader
+        - readAsText() 读取可以用txt打开的文件 返回文本字符串   默认格式是utf-8
+        - readAsBinaryString 读取任意类型的文件返回二进制文件 常用于存储文件 传输文件
+        - readAsDataURl() 读取文件获取一段以data开头的字符串
+## 拖拽接口
+    - 除了图片和超链接之外的元素必须添加draggable=true 的属性

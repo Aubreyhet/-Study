@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" manifest="demo.appcache">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h4>web缓存</h4>
+    <input type="text" id="username">
+    <input type="button" value="设置数据" id="setdata">
+    <input type="button" value="获取数据" id="getdata">
+    <input type="button" value="删除数据" id="removedata">
+
+<script>
+// document.querySelector('#setdata').onclick = function(){
+//     var name = document.querySelector('#username').value;
+//     window.sessionStorage.setItem('username',name)
+// }
+// document.querySelector('#getdata').onclick = function(){
+//     var zhi = window.sessionStorage.getItem('username');
+//     alert(zhi)
+// }
+// document.querySelector('#removedata').onclick = function(){
+//     window.sessionStorage.removeItem('username');
+// }
+document.querySelector('#setdata').onclick = function(){
+    alert('haha')
+    var data = document.querySelector('#username').value;
+    window.localStorage.setItem('username',data);
+}
+document.querySelector('#getdata').onclick = function(){
+    var zhi = window.localStorage.getItem('username');
+    alert(zhi)
+}
+document.querySelector('#removedata').onclick = function(){
+    window.localStorage.removeItem('username');
+}
+</script>
+</body>
+</html>

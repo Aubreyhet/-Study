@@ -1,0 +1,43 @@
+.controls{
+    width: 1200px;
+    height: 40px;
+    background-color: rgb(34, 33, 33);
+    border-radius: 4px;
+    position: relative;
+}
+.switch,.expand{
+    position: absolute;
+    line-height: 40px;
+}
+.expand{
+    right: 0px;
+}
+.progress{
+    width: 80%;
+    height: 8px;
+    background-color:rgb(124, 124, 124);
+    border-radius: 4px;
+    position: relative;
+    float: left;
+    top: 16px;
+    left: 40px;
+    cursor:pointer
+}
+.loaded{
+    position: absolute;
+    height: 100%;
+    background-color:rgb(196, 196, 196);
+    border-radius: 4px;
+}
+.elapse{
+    position: absolute;
+    height: 100%;
+    background-color:#fff;
+    border-radius: 4px;
+}
+.time{
+    line-height: 40px;
+    position: absolute;
+    right: 40px;
+    color: #fff;
+}

@@ -16,7 +16,7 @@
     </main>
     <footer>网页底部</footer>
     <!-- 引入第三方插件解决h5在ie8 及以下的兼容性问题 -->
-    <script src="html5shiv.min.js"></script>
+    <!-- <script src="html5shiv.min.js"></script> -->
     <br>
     <br>
     <br>
@@ -94,11 +94,12 @@
     <meter></meter>
     <hr>
     <div class="one">
-        <p>这是一段要被托走的p元素</p>
+        <p id="pe" draggable="true">这是一段要被托走的p元素</p>
+        <p id="pe" draggable="true">这也是一段要被托走的p元素</p>
     </div>
-    <div class="two">
-        
-    </div>
+    <div class="two" id="div2"> </div>
+    <div class="three" id="div3"></div>
+        <div class="two" id="div4"></div> 
     <script>
         document.getElementById('username').oninput = function(){
             console.log(this.value);
@@ -106,6 +107,74 @@
         document.getElementById('username').oninvalid = function(){
             console.log(this.value);
         }
+        // const pe = document.querySelector('#pe');
+        // const div = document.querySelector('#div2');
+        // const div1 = document.querySelector('.one');
+        // div1.ondragover = function(pe){
+        //     pe.preventDefault();
+        // }
+        // div.ondragover = function(pe){
+        //     pe.preventDefault();
+        // }
+        // div.ondrop = function(){
+        //     div.appendChild(pe);
+        // }
+        // div1.ondrop = function(){
+        //     div1.appendChild(pe);
+        // }
+
+        //全局方法  任意元素托任意元素中去
+        var obj = null;
+        document.ondragstart = function(e){
+            obj = e.target;
+
+        }
+        document.ondragover = function(pe){
+            pe.preventDefault();
+        }
+        document.ondrop = function(e){
+            e.target.appendChild(obj);
+        }
+
+        var x = document.querySelector('#div4');
+        function getPosition(){
+            //能力测试
+            if(navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(show,errorfun,{})
+            }
+            else{
+                x.innerHTNL = '该浏览器不支持获取位置信息'
+            }
+        }
+        //俩回调函数
+        function show(position){
+            x.innerHTNL = '当前位置：'+ position.coords.latitude + 
+            '<br> 接下来:' + position.coords.longitude;
+        }
+        function errorfun(error){
+            console.log(error.code)
+        }
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -98,3 +98,28 @@
         - readAsDataURl() 读取文件获取一段以data开头的字符串
 ## 拖拽接口
     - 除了图片和超链接之外的元素必须添加draggable=true 的属性
+    - 被拖拽元素使用方法
+        - ondrag 整个拖拽过程都会调用
+        - ondragstart 拖拽开始时调用
+        - ondragleave 当鼠标离开被拖拽元素时使用
+        - ondragend 拖拽结束后使用
+    - 目标元素使用方法
+        - ondragenter 当被拖拽元素进入目标元素后调用
+        - ondragover 当停留在目标元素上调用
+        - ondrop 当在目标元素上边松开鼠标时调用 默认不会触发 浏览器默认行为
+        - ondragleave 当鼠标离开目标元素时调用
+## 地理定位
+    - getCurrentPosition 获取位置信息  有三个参数 第一个参数 获取成功后的回调  第二个是获取失败是的回调 第三个是获取方式
+## web存储
+    - sessionStorage 存储数据到本地  容量5M存储临时的值
+        - setItem(key,value) 通过键和值存储数据 存储在当前页面里边 生命周期为关闭当前页面
+        - getItem(key)通过key值获取存储的内容value 没有值返回null
+        - removeItem(key) 通过指定的key删除指定的value 
+        - clear() 清空所有缓存
+    - localStorage 可以存储20m
+        - setItem(key,value) 通过键和值存储数据 存储在硬盘 同一浏览器共享数据
+        - getItem(key)通过key值获取存储的内容value 没有值返回null
+        - removeItem(key) 通过指定的key删除指定的value  深度清清除要手动清楚
+        - clear() 清空所有缓存 
+    - 应用缓存
+## 自定义多媒体播放接口

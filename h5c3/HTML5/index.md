@@ -122,4 +122,7 @@
     - removeItem(key) 通过指定的key删除指定的value  深度清清除要手动清楚
     - clear() 清空所有缓存 
 - 应用缓存
+    - 概念：使用html5，通过创建cache manifest文件，可以轻松的创建web应用的离线版本
+    - 基础：
+      - a.如需启用应用文件缓存，需要在文档的<html>标签中包含manifest属性 属性值是.appcache的文件路径(缓存清单文件)
 ## 自定义多媒体播放接口

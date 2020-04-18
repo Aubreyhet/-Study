@@ -1,3 +1,4 @@
+https://www.bilibili.com/video/BV14J4114768?p=67
 # HTML5
 ## 语义标签使用 （块级）ie9及以上兼容
 - header 头部
@@ -47,7 +48,7 @@
             <!-- 使用datalist创建选择列表 -->
             <datalist id="url">
                 <!-- 创建选项值：value：具体的值  如果input的type值为url 这里的vaule必须要有http label:提示信息，辅助值 -->
-                <option value="http://www.baidu.com"></option>
+                <option value="http://www.baidu.com"></option> 
                 <option value="http://www.souhu.com"></option>
                 <option value="http://www.douban.com"></option>
                 <option value="http://www.jingdong.com"></option>

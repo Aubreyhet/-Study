@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-CDN</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="vue-app">
+        <h1>hello,{{ name }}</h1>
+        <p>{{ greet('morning') }}</p>
+        <p>{{ haveLunch() }}</p>
+        <div>
+            <!-- <a v-bind:href="purpose">baidu</a> -->
+            <a :href="purpose">baidu</a> <!-- 缩写 -->
+            <p v-html='webseitTag'></p>
+        </div>
+        <!-- <button v-on:click='age++'>年龄加加</button>
+        <button @click='age--'>年龄减减</button> -->
+        <button @click='add(1)'>年龄加一年</button>
+        <button @click='less(1)'>年龄减一年</button>
+        <button @dblclick='add(10)'>年龄加10年</button>
+        <button @dblclick='less(10)'>年龄减10年</button>
+        <p>我的年龄是：{{ age }}</p>
+        <!-- 鼠标事件
+         -->
+        <div id="canvas" @mousemove='updataXY'>
+            {{ x }},{{ y }}
+        </div>
+        <!-- 事件修饰符 -->
+        <p><a @click.prevent='handleClick' href="http://www.baidu.com">baidu</a></p>
+        <!-- 监听键盘事件 -->
+        <table>姓名</table>
+        <input type="text" @keyup='logName'><br>
+        <table>年龄</table>
+        <input type="text" @keyup='logAge'>
+
+
+        <!-- 双向数据绑定 -->
+        <!-- <h1>双向数据绑定 input select textarea</h1>
+        <label>请输入..</label>
+        <input type="text" v-model='value'><br>
+        <span>您输入的是：{{ value }}</span> -->
+
+
+        <h1>使用ref双向数据绑定</h1>
+        <h1>双向数据绑定 input select textarea</h1>
+        <label>请输入..</label>
+        <input type="text" ref='value' @keyup='getName()'><br>
+        <span>您输入的是：{{ value }}</span>
+
+
+        <br>
+        <br>
+
+        <!-- 计算属性动态绑定css -->
+        <div @click='myChangeColor=!myChangeColor' :class='{changeColor:myChangeColor}'>
+            <span>hello</span>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

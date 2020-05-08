@@ -1,0 +1,14 @@
+#canvas {
+    width: 600px;
+    padding: 200px 20px;
+    text-align: center;
+    border: solid 1px #333;
+}
+
+span {
+    color: red;
+}
+
+.changeColor span {
+    color: green;
+}

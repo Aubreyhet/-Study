@@ -1,4 +1,3 @@
-
 // document.write("你好");
 // document.write(7);
 // document.write(8);
@@ -12,7 +11,7 @@
 
 
 //输入语句
-// prompt('请输入你的年龄');
+// prompt('请输入你的年龄', '');
 
 
 //  单行注释
@@ -343,23 +342,23 @@
 //标准体重计算
 // var gender = prompt('请输入性别：');
 // var height = +prompt('请输入身高：');
-// var weight = +prompt('请输入体重：');
-// if(gender != '男' && gender != '女' || isNaN(height) || isNaN(weight)){
+// var weight = +prompt('请输入体重（KG）：');
+// if (gender != '男' && gender != '女' || isNaN(height) || isNaN(weight)) {
 //   alert('输入有误');
-// }else{
+// } else {
 //   var differ;
-//   if(gender === '女'){
+//   if (gender === '女') {
 //     differ = (height - 80) * 0.7;
-//   }else{
+//   } else {
 //     differ = (height - 70) * 0.6;
 //   }
-//   if(weight > differ * 1.1){
+//   if (weight > differ * 1.1) {
 //     alert('偏重')
-//   }else if(weight < differ * 0.9){
-//     alert('偏重')
-//   }else{
+//   } else if (weight < differ * 0.9) {
+//     alert('偏轻')
+//   } else {
 //     alert('完美')
-//   } 
+//   }
 // }
 
 //计算理财情况
@@ -572,10 +571,10 @@
 
 //输出一个三行五列的*
 // var row = 3;
-//     col = 5;
-// for(var i = 1; i <= row; i++){
+// col = 5;
+// for (var i = 1; i <= row; i++) {
 //   var y = '';
-//   for(var j = 1; j <= col; j++){
+//   for (var j = 1; j <= col; j++) {
 //     y += '*';
 //   }
 //   console.log(y)
@@ -583,9 +582,9 @@
 
 //输出一个直角三角形
 // var x = 5;
-// for(var i = 1; i <= x; i++){
+// for (var i = 1; i <= x; i++) {
 //   var y = '';
-//   for(var j = 1; j <= i; j++){
+//   for (var j = 1; j <= i; j++) {
 //     y += '*';
 //   }
 //   console.log(y)
@@ -593,12 +592,12 @@
 
 //用*输出一个等腰三角形
 // var row = 10;
-// for(var i = 1; i < 5; i++){
+// for (var i = 1; i < 5; i++) {
 //   var y = '';
-//   for(var j = 0; j < row-i; j++){
+//   for (var j = 0; j < row - i; j++) {
 //     y += ' ';
 //   }
-//   for(var z = 0; z < i*2-1; z++){
+//   for (var z = 0; z < i * 2 - 1; z++) {
 //     y += '*'
 //   }
 //   console.log(y);
@@ -693,10 +692,10 @@
 // console.log(sum);
 
 //99乘法表
-// for(var i = 1; i < 10; i++){
+// for (var i = 1; i < 10; i++) {
 //   y = '';
-//   for(var j = 1; j <= i; j++){
-//     y = y+ `${j}*${i}=${i*j}\t`;
+//   for (var j = 1; j <= i; j++) {
+//     y = y + `${j}*${i}=${i*j}\t`;
 //   }
 //   console.log(y);
 // }
@@ -713,39 +712,39 @@
 
 // console.log('游戏开始！');
 // var gameNum = 1,
-//     player = 0,
-//     pcNum = 0;
-// while(true){
+//   player = 0,
+//   pcNum = 0;
+// while (true) {
 //   console.log(`============第${gameNum}轮============`);
 //   console.log(`系统${pcNum}分， 玩家${player}分`);
 //   var fist = prompt('请出拳（石头，剪刀，布）');
-//   if(fist === null){
+//   if (fist === null) {
 //     break;
 //   }
-//   if(fist !== '石头' && fist !== '剪刀' && fist !== '布'){
+//   if (fist !== '石头' && fist !== '剪刀' && fist !== '布') {
 //     alert('请重新出拳！')
 //     continue;
 //   }
 //   var rand = Math.random();
 //   var pcFise;
-//   if(rand < 0.333){
+//   if (rand < 0.333) {
 //     pcFise = '剪刀'
-//   }else if(rand <0.666){
+//   } else if (rand < 0.666) {
 //     pcFise = '石头'
-//   }else{
+//   } else {
 //     pcFise = '布'
 //   }
 //   console.log(`你的出拳: ${fist}!`);
 //   console.log(`系统出拳：${pcFise}!`)
-//   if(fist == '石头' && pcFise == '剪刀' ||
-//      fist == '剪刀' && pcFise == '布' ||
-//      fist == '布' && pcFise == '石头'
-//   ){
+//   if (fist == '石头' && pcFise == '剪刀' ||
+//     fist == '剪刀' && pcFise == '布' ||
+//     fist == '布' && pcFise == '石头'
+//   ) {
 //     player++;
 //     console.log('你赢了！')
-//   }else if(fist == pcFise){
+//   } else if (fist == pcFise) {
 //     console.log('平局！')
-//   }else{
+//   } else {
 //     pcNum++;
 //     console.log('系统赢了！')
 //   }
@@ -845,13 +844,13 @@
 
 //二维数组
 // var arr1 = [
-//   [1,2,3],
-//   [3,4,5],
-//   [5,6,7]
+//   [1, 2, 3],
+//   [3, 4, 5],
+//   [5, 6, 7]
 // ];
 // sum = 0;
-// for(var i = 0; i < arr1.length; i++){
-//   for(var j = 0; j < arr1[i].length; j++){
+// for (var i = 0; i < arr1.length; i++) {
+//   for (var j = 0; j < arr1[i].length; j++) {
 //     sum += arr1[i][j];
 //   }
 // }
@@ -876,27 +875,27 @@
 
 
 // //拼接数组
-// var arr1 = [1,2,3,4,5];
-// var arr2 = [6,7,8,9,10];
-// for(var i = 0; i < arr2.length; i++){
+// var arr1 = [1, 2, 3, 4, 5];
+// var arr2 = [6, 7, 8, 9, 10];
+// for (var i = 0; i < arr2.length; i++) {
 //   // console.log(arr1[arr1.length])
 //   arr1[arr1.length] = arr2[i];
 // }
 // console.log(arr1);
 
-// var arr1 = [1,2,3,4,5];
-// var arr2 = [6,7,8,9,10];
+// var arr1 = [1, 2, 3, 4, 5];
+// var arr2 = [6, 7, 8, 9, 10];
 // var arr3 = arr1.concat(arr2);
 // console.log(arr3);
 
 
 //提示用户输入数组的长度，以及数组的每一项的值  打印该数组
 // var len = +prompt('请输入数组的长度');
-// if(isNaN(len) ||  len < 0){
+// if (isNaN(len) || len < 0) {
 //   console.log('输入有误')
-// } else{
+// } else {
 //   var arr = new Array(len);
-//   for(var i = 0; i < len; i++){
+//   for (var i = 0; i < len; i++) {
 //     arr[i] = prompt(`请输入第${i+1}项的值`);
 //   }
 //   console.log(arr);
@@ -1043,16 +1042,16 @@
 
 
 // let arr = [
-//   [1,2,3,4,5],
-//   [6,7,8,9,10],
-//   [11,12,13,14,15],
-//   [15,16,17,18,19],
-//   [21,31,41,51,61]
+//   [1, 2, 3, 4, 5],
+//   [6, 7, 8, 9, 10],
+//   [11, 12, 13, 14, 15],
+//   [15, 16, 17, 18, 19],
+//   [21, 31, 41, 51, 61]
 // ]
 // let sum = 0;
-// for(let i = 0; i < arr.length; i++){
-//   for(let j = 0; j < arr[i].length; j++){
-//     if(i === j || i + j === arr.length - 1){
+// for (let i = 0; i < arr.length; i++) {
+//   for (let j = 0; j < arr[i].length; j++) {
+//     if (i === j || i + j === arr.length - 1) {
 //       sum += arr[i][j]
 //     }
 //   }
@@ -1061,13 +1060,13 @@
 
 
 //排序  冒泡
-// let arr = [3,5,1,98,45,23,66,2,12,4];
-// for(let i = 1; i < arr.length; i++){
-//   for(let j = 0; j < arr.length - 1; j++){
-//     if(arr[j] > arr[j+1]){
+// let arr = [3, 5, 1, 98, 45, 23, 66, 2, 12, 4];
+// for (let i = 1; i < arr.length; i++) {
+//   for (let j = 0; j < arr.length - 1; j++) {
+//     if (arr[j] > arr[j + 1]) {
 //       let tmp = arr[j];
-//       arr[j] = arr[j+1];
-//       arr[j+1] = tmp;
+//       arr[j] = arr[j + 1];
+//       arr[j + 1] = tmp;
 
 //     }
 //   }
@@ -1217,74 +1216,74 @@
 // }
 
 // //给传入的数组进行排序
-// function mysort(arr, order, one){
-//   if(!isNaN(arr[0])){
-//     arr = srrSort(arr,order)
-//   }else if(typeof arr[0] === 'string'){
+// function mysort(arr, order, one) {
+//   if (!isNaN(arr[0])) {
+//     arr = srrSort(arr, order)
+//   } else if (typeof arr[0] === 'string') {
 //     arr = strArr(arr, order)
-//   }else if(typeof arr[0] === 'object'){
+//   } else if (typeof arr[0] === 'object') {
 
 //   }
 //   return arr;
 // }
 
 
-// // let arrone = ['zai','ahu','Efif','rh','thuu','fhyg','sgjhg'];
-// // let arrone = ['曾晓慧','袁刚刚','朱乐纯','罗鹏','王磊','肖周荣']
+// let arrone = ['zai', 'ahu', 'Efif', 'rh', 'thuu', 'fhyg', 'sgjhg'];
+// let arrone = ['曾晓慧', '袁刚刚', '朱乐纯', '罗鹏', '王磊', '肖周荣']
 // let arrone = [{
 //   name: 'song',
 //   age: 21
-// },{
+// }, {
 //   name: 'Aubrey',
 //   age: 23
-// },{
+// }, {
 //   name: 'yang',
 //   age: 45
-// },{
+// }, {
 //   name: 'zhao',
 //   age: 2
-// },{
+// }, {
 //   name: 'wang',
 //   age: 75
-// },{
+// }, {
 //   name: 'liu',
 //   age: 21
 // }]
-// console.log(mysort(arrone,true,'age'))
+// console.log(mysort(arrone, true, 'age'))
 
 
 //创建角色构造函数
-// function Charactor (name,attack,defense,life,crit){
+// function Charactor(name, attack, defense, life, crit) {
 //   this.name = name,
-//   this.attack = attack,
-//   this.defense = defense,
-//   this.life = life,
-//   this.crit = crit,
-//   this.hit = function(ctor){
+//     this.attack = attack,
+//     this.defense = defense,
+//     this.life = life,
+//     this.crit = crit,
+//     this.hit = function (ctor) {
 
-//   },
-//   this.print = function(){
-//     console.log(`${this.name}：\t生命值${this.life}\t攻击力${this.attack}\t防御力${this.defense}\t暴击率${this.crit}\t`)
-//   }
+//     },
+//     this.print = function () {
+//       console.log(`${this.name}：\t生命值${this.life}\t攻击力${this.attack}\t防御力${this.defense}\t暴击率${this.crit}\t`)
+//     }
 // }
-// let hero = new Charactor('英雄',100,200,500,30);
-// let monster = new Charactor('怪兽',100,300,300,10);
+// let hero = new Charactor('英雄', 100, 200, 500, 30);
+// let monster = new Charactor('怪兽', 100, 300, 300, 10);
 // hero.print()
 // monster.print()
 
 //求斐波拉数列
-// function fijian(n){
-//   if(n ===1 || n === 2){
+// function fijian(n) {
+//   if (n === 1 || n === 2) {
 //     return n;
 //   }
-//   return fijian(n - 1) + fijian(n -2);
+//   return fijian(n - 1) + fijian(n - 2);
 // }
 // console.log(fijian(7))
 
 
 //阶乘
-// function factorial(sum){
-//   if(sum === 1){
+// function factorial(sum) {
+//   if (sum === 1) {
 //     return 1
 //   }
 //   return sum * factorial(sum - 1)
@@ -1294,16 +1293,16 @@
 
 
 //汉诺塔
-// function hannuo(pill1,pill2,pill3,num){
-//   if(num === 1){
+// function hannuo(pill1, pill2, pill3, num) {
+//   if (num === 1) {
 //     console.log(`${pill1} --> ${pill3}`)
-//   }else{
-//     hannuo(pill1,pill3,pill2,num - 1)
+//   } else {
+//     hannuo(pill1, pill3, pill2, num - 1)
 //     console.log(`${pill1} --> ${pill3}`);
-//     hannuo(pill2,pill1,pill3,num - 1)
+//     hannuo(pill2, pill1, pill3, num - 1)
 //   }
 // }
-// hannuo('A','B','C',3)
+// hannuo('A', 'B', 'C', 3)
 
 
 //将伪数组转换为真数组
@@ -1318,12 +1317,12 @@
 // let arr = [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6]
 // let newArr = arr.filter(function (i) {
 //   return i >= 0
-// }).map(function(item){
+// }).map(function (item) {
 //   return item * item
-// }).map(function(item){
+// }).map(function (item) {
 //   return item + item
-// }).reduce(function(sum, item){
-//   return  sum + item
+// }).reduce(function (sum, item) {
+//   return sum + item
 // })
 // console.log(newArr)
 
@@ -1365,11 +1364,11 @@
 // function bigHump(str) {
 //   let resule = '';
 //   let empties = ' ';
-//   for(let i = 0; i < str.length; i++){
-//     if(!empties.includes(str[i])){
-//       if(empties.includes(str[i - 1]) || i === 0){
+//   for (let i = 0; i < str.length; i++) {
+//     if (!empties.includes(str[i])) {
+//       if (empties.includes(str[i - 1]) || i === 0) {
 //         resule += str[i].toUpperCase();
-//       }else{
+//       } else {
 //         resule += str[i]
 //       }
 //     }
@@ -1383,30 +1382,31 @@
 
 
 // //  年-月-日 时：分：秒
-// function getDateString(date){
-//   let year = date.getFullYear().toString().padStart(4,'0')
-//   let month = date.getMonth().toString().padStart(2,'0')
-//   let day = date.getDate().toString().padStart(2,'0')
-//   let hours = date.getHours().toString().padStart(2,'0')
-//   let minutes = date.getMinutes().toString().padStart(2,'0')
-//   let seconds = date.getSeconds().toString().padStart(2,'0')
+// function getDateString(date) {
+//   let year = date.getFullYear().toString().padStart(4, '0')
+//   let isMonth = date.getMonth() + 1
+//   let month = isMonth.toString().padStart(2, '0')
+//   let day = date.getDate().toString().padStart(2, '0')
+//   let hours = date.getHours().toString().padStart(2, '0')
+//   let minutes = date.getMinutes().toString().padStart(2, '0')
+//   let seconds = date.getSeconds().toString().padStart(2, '0')
 //   return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 // }
 // let date = new Date()
 // console.log(getDateString(date))
 
 // //得到年龄
-// function getAge(year,month,day){
+// function getAge(year, month, day) {
 //   let nowtime = new Date();
 //   let dec = nowtime.getFullYear() - year;
-//   let thisYear = new Date(nowtime.getFullYear(),month,day)
-//   if(thisYear > nowtime){
+//   let thisYear = new Date(nowtime.getFullYear(), month, day)
+//   if (thisYear > nowtime) {
 //     dec--;
 //   }
 //   return dec
 // }
 
-// console.log(getAge(1996,3,08))
+// console.log(getAge(1996, 3, 08))
 
 
 // 计算还有几天过生日
@@ -1427,23 +1427,22 @@
 //根据系统当前的月份打印出每天周几
 // function getDays(year, month) {
 //   if (month === 2) {
-//       return this.leapYear(year) ? 29 : 28;
-//   }
-//   else if (month < 8 && this.isOdd(month) || month >= 8 && !this.isOdd(month)) {
-//       return 31;
-//   }
-//   else {
-//       return 30;
+//     return this.leapYear(year) ? 29 : 28;
+//   } else if (month < 8 && this.isOdd(month) || month >= 8 && !this.isOdd(month)) {
+//     return 31;
+//   } else {
+//     return 30;
 //   }
 // }
-// function print(){
+
+// function print() {
 //   let now = new Date();
 //   let year = now.getFullYear();
 //   let thisMonth = now.getMonth() + 1;
 //   //得到这个月几天
-//   let day = getDays(year,thisMonth)
+//   let day = getDays(year, thisMonth)
 //   let week = now.getDay
-//   for(let i = 0; i < day; i++){
+//   for (let i = 0; i < day; i++) {
 //     console.log(`${year}年${thisMonth}月${day}日 星期`)
 //   }
 // }
@@ -1454,29 +1453,12 @@
 //将空白替换为，形式
 
 
-let user = '独倚角有';
-function first(){
-  console.log(user);
-};
-function second(){
-  let user = '工程师';
-  first();
-}
-second();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// let user = '独倚角有';
+// function first(){
+//   console.log(user);
+// };
+// function second(){
+//   let user = '工程师';
+//   first();
+// }
+// second();

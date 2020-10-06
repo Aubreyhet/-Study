@@ -1,0 +1,19 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+#app {
+    width: 200px;
+}
+
+ul {
+    border: 1px solid black;
+}
+
+ul>li {
+    list-style: none;
+    height: 30px;
+    border-bottom: 1px solid #ccc;
+    line-height: 30px;
+}

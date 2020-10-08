@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <section id="app">
+        <!-- 1.遍历数组 -->
+        <ul>
+            <li v-for='(item,index) in names'>{{index + 1}}---{{item}}</li>
+        </ul>
+        <!-- 2.遍历对象 -->
+        <!-- 2.1在遍历对象时 第一个是value 第二个是key -->
+        <ul>
+            <li v-for='(item,key) in info'>{{key}}---{{item}}</li>
+        </ul>
+        <!-- 2.2遍历对象时 可以遍历到value key 还有index -->
+        <ul>
+            <li v-for='(item,key,index) in info'>{{item}}---{{key}}---{{index}}</li>
+        </ul>
+        <!-- 3.v-for使用过程添加key -->
+        <ul>
+            <li v-for='item in letters'>{{item}}</li>
+        </ul>
+        <hr>
+        <!-- 4.v-for中遍历一些数组方法是响应式的 -->
+        <ul>
+            <li v-for='item in letters'>{{item}}</li>
+        </ul>
+        <button @click='btnclick'>按钮</button>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>

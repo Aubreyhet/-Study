@@ -4,15 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案例</title>
+    <title>子组件向父组件传递</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
     <div id="app">
-        <cpn2></cpn2>
+        <cpn @itemclick='cpnclick' :c-name='names'></cpn>
     </div>
+    <template id="cpn">
+        <div>
+            <button v-for='item in categories' @click='btnclick(item)'>{{item.name}}</button>
+        </div>
+    </template>
     <script src="app.js"></script>
 </body>
 

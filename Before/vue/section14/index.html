@@ -4,15 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案例</title>
+    <title>父组件向子组件传递</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
     <div id="app">
-        <cpn2></cpn2>
+        <cpn :c-name='names'></cpn>
     </div>
+    <template id="cpn">
+        <div>
+            <h2>{{title}}</h2>
+            <p>我是正文222</p>
+            <ul>
+                <li v-for='(item ,index) in cName'>{{item}}</li>
+            </ul>
+        </div>
+    </template>
     <script src="app.js"></script>
 </body>
 

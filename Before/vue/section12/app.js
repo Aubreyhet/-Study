@@ -4,16 +4,19 @@ const cpnC1 = Vue.extend({
     template: `<div>
     <h2>这个是标题1</h2>
     <p>这个是正文，哈哈哈</p>
-    </div>`,
-    components: {
-
-    }
+    </div>`
 })
+// 创建第二个组件 相对于cpn1是父组件
 const cpnC2 = Vue.extend({
     template: `<div>
     <h2>这个是标题2</h2>
     <p>这个是正文，hehe</p>
-    </div>`
+    <cpn1></cpn1>
+    </div>`,
+    components: {
+        // 注册局部子组件
+        cpn1: cpnC1
+    }
 
 })
 // 3.使用组件
@@ -24,13 +27,9 @@ const app = new Vue({
     },
     components: {
         // 2.注册组件  这里注册的组件是局部组件
-        cpn: cpnC
+        cpn2: cpnC2
     },
     methods: {
 
     }
-})
-
-const app2 = new Vue({
-    el: 'app2'
 })

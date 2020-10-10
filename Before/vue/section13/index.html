@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽离模板</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <cpn></cpn>
+    </div>
+    <!-- 第一种写法 使用script标签 类型是text/x-template -->
+    <!-- <script type="text/x-template" id="cpn">
+        <div>
+            <h2>我是标题</h2>
+            <p>我是正文222</p>
+        </div>
+    </script> -->
+    <!-- 第二种写法 使用普通文本方式写 -->
+    <template id="cpn">
+        <div>
+            <h2>{{title}}</h2>
+            <p>我是正文222</p>
+        </div>
+    </template>
+    <script src="app.js"></script>
+</body>
+
+</html>

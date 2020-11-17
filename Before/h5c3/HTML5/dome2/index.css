@@ -1,0 +1,38 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+ul{
+    margin-top: 50px;
+}
+ul li{
+    list-style: none;
+    width: 300px;
+    height: 40px;
+    margin: 5px 0;
+}
+.box{
+    margin: 0 auto;
+    width: 300px;
+    height: 600px;
+    background-color: skyblue;
+    border: 1px solid ;
+    border-radius: 10px;
+    text-align: center;
+}
+#shelf{
+    width: 48%;
+}
+input{
+    height: 20px;
+    font-size: 16px;
+}
+input[type='number']{
+    width: 20%;
+    margin-left: 10px;
+}
+#generateInput{
+    width: 72%;
+    height: 40px;
+    font-size: 20px;
+}

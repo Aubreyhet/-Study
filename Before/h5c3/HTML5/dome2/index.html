@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    
+  
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li ><span>仓库编码</span> <input id="shelf" type="text"></li>
+            <li><span>货架数量</span> <input id="shelfB" type="number"><input id="shelfE" type="number"></li>
+            <li><span>货架层数</span> <input id="floorB" type="number"><input id="floorE" type="number"></li>
+            <li><span>货架格数</span> <input id="gridB" type="number"><input id="gridE"  type="number"></li>
+        </ul>
+        <button id="generateInput">生成</button>
+        <svg id="svgcode"></svg> 
+  <!-- or --> 
+  <canvas id="canvascode"></canvas> 
+  <!-- or --> 
+  <img id="imgcode" /> 
+    </div>
+ 
+<script src="./index.js"> </script>
+
+</body>
+</html>

@@ -1,5 +1,8 @@
-let generateInput = document.querySelector("#generateInput").addEventListener('click',function(){
-    let arr = []
+function pdfMap() {
+    console.log('入口')
+let a = []
+    let box = document.getElementById('export_content')
+    let imgE
     let shelf = document.getElementById("shelf").value
     let shelfB = document.getElementById("shelfB").value
     let shelfE = document.getElementById("shelfE").value
@@ -7,18 +10,23 @@ let generateInput = document.querySelector("#generateInput").addEventListener('c
     let floorE = document.getElementById("floorE").value
     let gridB = document.getElementById("gridB").value
     let gridE = document.getElementById("gridE").value
-    arr.push(shelfB,shelfE,floorB,floorE,gridB,gridE)
-    generate(shelf,arr)
-},false)
-function generate(k,a){
+    a.push(shelfB,shelfE,floorB,floorE,gridB,gridE)
+    let col = 0
     for (let i = a[0]; i <= a[1]; i ++){
         for (let j = a[2]; j <= a[3]; j++) {
             for (let x = a[4]; x <= a[5]; x++) {
-                console.log(`${k}${buLing(i)}${buLing(j)}${buLing(x)}`)
+                imgE = document.createElement('img')
+                imgE.setAttribute('class',`imgcode`)
+                imgE.setAttribute('id',`imgcode${col}`)
+                box.appendChild(imgE)
+                JsBarcode(`#imgcode${col}`, `${shelf}${buLing(i)}${buLing(j)}${buLing(x)}`,{height:70,fontOptions:'bold'})
+                col+=1
             }
         }
     }
 }
+
+
 function buLing(n){
     return n>9?n:"0"+n;
   }

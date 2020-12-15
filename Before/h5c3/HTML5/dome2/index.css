@@ -1,9 +1,6 @@
-*{
-    margin: 0 auto;
-    padding: 0;
-}
 ul{
     margin-top: 50px;
+    padding: 0;
 }
 ul li{
     list-style: none;

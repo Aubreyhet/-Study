@@ -56,7 +56,12 @@
          - ::selection 鼠标选中文字改变样式
 ## 自定义字体
    - font-face 定义自定义字体
-   
+   - font-family 定义字体系列
+   - font-size 定义字体字号 单位像素
+   - font-weight 设置字体粗细 参数有三 也可数字（推荐）
+   - font-style 设置字体样式 文本风格
+   - font组合属性写法(不可以换位置)
+      - font: font-style font-weight font-size/line-height font-family
 ## 新的UI方案
 ## 过渡
 ## 2D/3D变形

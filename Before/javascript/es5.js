@@ -1395,7 +1395,7 @@
 // let date = new Date()
 // console.log(getDateString(date))
 
-// //得到年龄
+// 得到年龄
 // function getAge(year, month, day) {
 //   let nowtime = new Date();
 //   let dec = nowtime.getFullYear() - year;

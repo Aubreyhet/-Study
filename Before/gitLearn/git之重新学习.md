@@ -14,14 +14,27 @@
   - git clone 远程仓库地址 相对于第一种的创建仓库的方式
 - git 生成密钥命令
   - ssh-keygen -t rsa -C "victordu6694@gmail.com"
+
+### git 基本命令
+
 - git 暂存区 工作区（工作目录） 版本库
   - 查看 git 仓库的状态
     - git status
     - git status -s 输出简洁内容
   - 将未跟踪的文件加入到暂存区
-    - git add 指定文件名
+    - git add 指定文件名 将指定文件加入到暂存区
     - git add . 将所有未跟踪文件加入到暂存区
   - 将加入到暂存区的文件恢复致未跟踪状态(取消暂存)
     - git reset HEAD 文件名
-  - 将暂存区的文件添加到版本库
+  - 将暂存区的文件提交到版本库 提交之前必须先加入到暂存区
     - git commit -m '提交的消息'
+- git 命令删除文件
+  - git rm 文件名 删除指定文件 只会删除工作区的文件 无需添加到暂存区 只需要提交到版本库
+- 将文件添加至文件忽略列表
+  - 工作区目录下创建固定名称的文件 .gitignore 写入配置 用来忽略需要忽略的文件
+- 查看 git 日志
+  - git log
+
+### git 远程仓库的操作
+
+https://www.bilibili.com/video/BV13f4y1z77S?p=20

@@ -1,3 +1,8 @@
+-- 创建库
+create datebase 
+
+
+
 -- 创建表的时候添加非空约束
 CREATE TABLE stu(
 	id int,

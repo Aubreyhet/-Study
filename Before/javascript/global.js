@@ -4,8 +4,8 @@
  * @param {number} num 
  * @returns {boolean} 
  */
-function isOdd(num){
-    return num % 2 !==0;
+function isOdd(num) {
+    return num % 2 !== 0;
 }
 
 //判断一个数是否为素数
@@ -14,12 +14,12 @@ function isOdd(num){
  * @param {number} num 
  * @returns {boolean}
  */
-function isPrime(num){
-    if(num < 2){
+function isPrime(num) {
+    if (num < 2) {
         return false
     }
-    for(let i = 2; i < num -1; i++){
-        if(num % i === 0){
+    for (let i = 2; i < num - 1; i++) {
+        if (num % i === 0) {
             return false;
         }
     }
@@ -32,9 +32,9 @@ function isPrime(num){
  * @param {array} arr 
  * @returns {number}
  */
-function sumOfArr(arr){
+function sumOfArr(arr) {
     let sum = 0;
-    for(let i = 0; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         sum += arr[i]
     }
     return sum
@@ -46,13 +46,13 @@ function sumOfArr(arr){
  * @param {array} arr 
  * @returns {number}
  */
-function maxOfArr(arr){
-    if(arr.length === 0){
+function maxOfArr(arr) {
+    if (arr.length === 0) {
         return;
     }
     let max = arr[0];
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i] > max){
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
             max = arr[i]
         }
     }
@@ -65,13 +65,13 @@ function maxOfArr(arr){
  * @param {array} arr 
  * @returns {number}
  */
-function minOfArr(arr){
-    if(arr.length === 0){
+function minOfArr(arr) {
+    if (arr.length === 0) {
         return;
     }
     let min = arr[0];
-    for(let i = 1; i < arr.length; i++){
-        if(arr[i] < min){
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < min) {
             min = arr[i]
         }
     }
@@ -83,10 +83,10 @@ function minOfArr(arr){
  * 判断数组是否为稀松数组
  * @param {array} arr 
  */
-function hasEmptyInArr(arr){
+function hasEmptyInArr(arr) {
     //稀松数组 下标连续
-    for(let i = 0; i < arr.length; i++){
-        if(!(i in arr)){
+    for (let i = 0; i < arr.length; i++) {
+        if (!(i in arr)) {
             return true;
         }
     }
@@ -98,19 +98,19 @@ function hasEmptyInArr(arr){
  * 判断某年是否为闰年
  * @param {number} year 
  */
-function leapYear(year){
+function leapYear(year) {
     return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
 }
 
 //写一个函数返回某年某月的天数
-function getDays(year,month){
-    if(month === 2){
+function getDays(year, month) {
+    if (month === 2) {
         return leapYear(year) ? 29 : 28;
     }
-    else if(month < 8 && isOdd(month) || month >= 8 && !isOdd(month)){
+    else if (month < 8 && isOdd(month) || month >= 8 && !isOdd(month)) {
         return 31;
     }
-    else{
+    else {
         return 30;
     }
 }
@@ -121,19 +121,19 @@ function getDays(year,month){
  * @param {array} arr 
  * @returns {Object}
  */
-function getFreqInArr(arr){
+function getFreqInArr(arr) {
     let records = {};
-    for(let i = 0; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         let n = arr[i];
-        if(records[n]){
+        if (records[n]) {
             records[n]++
-        }else{
+        } else {
             records[n] = 1
         }
     }
     let frequen;
-    for(let prop in records){
-        if(!frequen || records[prop] > frequen.frequency){
+    for (let prop in records) {
+        if (!frequen || records[prop] > frequen.frequency) {
             frequen = {
                 number: +prop,
                 frequency: records[prop]
@@ -144,13 +144,13 @@ function getFreqInArr(arr){
 }
 
 //普通数组排序
-function srrSort(arr){
-    for(let i = 1; i <= arr.length; i++){
-        for(let j = 0; j < arr.length; j++){
-            if(arr[j] > arr[j+1]){
+function srrSort(arr) {
+    for (let i = 1; i <= arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] > arr[j + 1]) {
                 let tmp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = tmp
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp
             }
         }
     }
@@ -159,35 +159,35 @@ function srrSort(arr){
 
 
 //数组排序
-function sort(arr, callbackFun){
-    if(!callbackFun){
-        callbackFun = function(a,b){
-            if(a > b){
+function sort(arr, callbackFun) {
+    if (!callbackFun) {
+        callbackFun = function (a, b) {
+            if (a > b) {
                 return 1;
-            }else if(a === b){
+            } else if (a === b) {
                 return 0;
-            }else{
+            } else {
                 return -1;
             }
         }
     }
-    for(let i = 1; i < arr.length; i++){
-        for(let j = 0; j < arr.length - i; j++){
-            if(callbackFun(arr[j], arr[j+1]) > 0){
+    for (let i = 1; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - i; j++) {
+            if (callbackFun(arr[j], arr[j + 1]) > 0) {
                 let tmp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = tmp
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp
             }
         }
-    }   
+    }
 }
 
 
 //筛选
-function filter(arr, callbackFun){
+function filter(arr, callbackFun) {
     let newArr = [];
-    for(let i = 0; i < arr.length; i++){
-        if(callbackFun(arr[i], i)){
+    for (let i = 0; i < arr.length; i++) {
+        if (callbackFun(arr[i], i)) {
             newArr.push(arr[i])
         }
     }
@@ -195,24 +195,26 @@ function filter(arr, callbackFun){
 }
 
 //找到第一个符合条件的数据
-function find(arr, callbackFun){
-    for(let i = 0; i < arr.length; i++){
-        if(callbackFun(arr[i], i)){
+function find(arr, callbackFun) {
+    for (let i = 0; i < arr.length; i++) {
+        if (callbackFun(arr[i], i)) {
             return arr[i];
         }
     }
 }
 
 //找到符合条件的数据的数量
-function count(arr, callbackFun){
+function count(arr, callbackFun) {
     let sum = 0;
-    for(let i = 0; i < arr.length; i++){
-        if(callbackFun(arr[i], i)){
+    for (let i = 0; i < arr.length; i++) {
+        if (callbackFun(arr[i], i)) {
             sum++;
         }
     }
     return sum;
 }
+
+// 
 
 
 

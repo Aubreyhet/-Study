@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>123</h1>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Create SocketIO instance
+    var socket = new io.Socket('localhost',{
+            port: 1337
+        });
+        socket.connect();
+
+        // Add a connect listener
+        socket.on('connect',function() {
+            log('<span style="color:green;">Client has connected to the server!</span>');
+        });
+        // Add a connect listener
+        socket.on('message',function(data) {
+            log('Received a message from the server:  ' + data);
+        });
+        // Add a disconnect listener
+        socket.on('disconnect',function() {
+            log('<span style="color:red;">The client has disconnected!</span>');
+        });
+
+        // Sends a message to the server via sockets
+        function sendMessageToServer(message) {
+            socket.send(message);
+            log('<span style="color:#888">Sending "' + message + '" to the server!</span>');
+        }
+
+        // Outputs to console and list
+        function log(message) {
+            var li = document.createElement('li');
+            li.innerHTML = message;
+            document.getElementById('message-list').appendChild(li);
+        }
+  </script>
+</body>
+</html>

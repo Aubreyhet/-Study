@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{ age }}
+  </div>
+  <div id="root"></div>
+<script src="./vue.js"></script>  
+<script>
+  Vue.component('my-button', Vue.extend({
+    template: '<button></button>'
+  }))
+  const vm = new Vue({
+    el: '#app',
+    data() {
+      return {
+        age: 28
+      }
+    }
+  })
+  // let Sub = Vue.extend({
+  //   template: '<div>子组件</div>'
+  // })
+  // new Sub().$mount('#root')
+  // const vm = new Vue({
+  //   el: '#app',
+  //   data() {
+  //     return {
+  //       age: 28,
+  //       info: {
+  //         name: 'aubrey',
+  //         dep: '研发'
+  //       },
+  //       arr: [1,2,3,4,5]
+  //     }
+  //   },
+  //   computed: {
+  //     fullname: {
+  //       get() {
+  //         return this.info.name + this.info.dep
+  //       },
+  //       set() {
+  //         console.log('se')
+  //       }
+ 
+  //     }
+  //   },
+  //   created() {
+  //     console.log('数据初始化完成')
+  //   }
+  // })
+  // Vue.component('my-button', Vue.extend({
+  //   template: '<div>子组件</div>'
+  // }))
+
+</script>
+</body>
+</html>

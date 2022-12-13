@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+  <script src="./promise.js"></script>
+  <script>
+    let p = new Covenant((resolve, reject) => {
+      // resolve('ok')
+      reject('错误 ')
+      // throw 'error'
+    })
+    let r = p.then(value => {
+      return '123'
+    }, err => {
+      console.warn(err)
+    })
+    console.log(r)
+    // const r = p.catch(err => {
+    //   console.warn(err)
+    // })
+    // console.log(r)
+    // p.then(v => {
+    //   console.log(v)
+    // }).catch(w => {
+    //   console.warn(w)
+    // })
+    // const p = Promise.reject('err')
+    // console.log(p)
+    // const p1 = Covenant.resolve('ok')
+    // const p2 = Covenant.resolve('ok')
+    // const p3 = Covenant.reject('err')
+
+    // let res = Covenant.all([p1,p2,p3])
+    // console.log(res)
+  </script>
+</body>
+</html>
